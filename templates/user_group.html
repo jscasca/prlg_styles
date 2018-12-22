@@ -1,0 +1,223 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel='stylesheet/less' href='../css/styles.less'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+<!-- NAVBAR -->
+<header class="header">
+	<nav role="navigation" class="navbar navbar-custom navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	      <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	      </button>
+	      <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" class="navlogo logo"/></a>
+	  </div>
+	  <!-- Collection of nav links, forms, and other content for toggling -->
+	  <div id="navbarCollapse" class="collapse navbar-collapse">
+	      
+	      <ul class="nav navbar-nav navbar-right">
+		<li class='dropdown'>
+			<a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+				<div class='lang-selector'>
+					EN				</div>
+			</a>
+			<ul role='menu' class='dropdown-menu'>
+				<li>
+					<a href="#">English</a>
+					</li>
+				<li>
+					<a href="#">Español</a>
+					</li>
+			</ul>
+		</li>
+
+		<li>
+	    <form role="search" class="navbar-form navbar-right" action="/prologes/search">
+	        <div class="input-group">
+	          <input type="text" placeholder="Search" name="q" class="form-control input-sm">
+	        	<span class="input-group-btn">
+							<button class="btn btn-default input-sm" type="submit">
+								<span class="fas fa-search"></span>
+							</button>
+	        	</span>
+	        </div>
+	    </form>
+		</li>
+	      
+	          <!-- NOT LOGGED IN -->
+	          			<li><a href="/prologes/login">Log in</a></li>
+		<!-- LOGGED IN -->
+		        </ul>
+	  </div>
+	  </div>
+	</nav>
+</header>
+
+<!-- MAIN BODY -->
+<div class="container">
+<div class="col-md-12">
+
+	<!-- Left side palnel -->
+	<div class="col-md-3 main-group--left-panel">
+		<div>
+			<!-- Group info -->
+			<section class="main-group">
+				<div class="main-group--icon">
+					<div class="" style="position:relative">
+						<div class="main-group--edit-button" id="edit-icon" tabindex='0' role='button'>
+							<i class="fas fa-pen edit-icon"></i>
+						</div>
+						<img alt="Group icon" id="club-icon" src="/prologes/img/user_clear.png">
+					</div>
+					<!-- <img alt="Group icon" id="group-icon" src="/prologes/img/user_clear.png"> -->
+				</div>
+				<div id="edit-icon--buttons" class="edit-icon--buttons"></div>
+				<!-- <h2 class="main-group--displayname" id="displayname"></h2>
+				<span class="main-group--groupname" id="groupname"></span> -->
+				<div id="edit-club--buttons" class="edit-club--buttons"></div>
+				<div class="main-group--info main-button" id="main-group--info">
+					<button class="btn action-btn-green">JOIN</button>
+				</div>
+				<div class="main-group--membership">
+					<!-- Info on your membership/buttons to join or request invitation -->
+				</div>
+			</section>
+			<!-- Members -->
+			<section>
+				<h2 class="main-group--members">Members</h2>
+				<div class="main-group--members" id="main-group--members">
+					<!-- Sample member style -->
+					<!-- <div class="main-group--member">
+						<div class="main-group--member-icon">
+							<img class="main-group--member-icon" src='/prologes/img/user_clear.png'>
+						</div>
+						<div class="main-group--member-info">
+							<div class="member--display-name">Shorter name here</div>
+							<span class="member--user-name">@mrShortName</span>
+						</div>
+					</div> -->
+					<!-- Here be members -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- Main content (comments) -->
+	<div class="col-md-6">
+		<!-- <div class="editable-area">
+			<div class="wrapper">
+				<input type="text" class="title" value="The club name">
+			</div>
+			<button class="btn action-btn-green">Save</button>
+		</div> -->
+		<section class="club-header">
+			<div id="club-title" class="title"></div>
+			<div id="club-handle" class="handle"></div>
+			<div id="club-description" class="description"></div>
+		</section>
+
+		<section>
+			<div class="group-comment--area">
+				<div class="comment--form">
+					<div class="comment--textarea-container">
+						<textarea id="comment--textarea" class="comment--textarea" placeholder="Write a comment..."></textarea>
+						<div class="comment--error-area" id="comment--error-area"></div>
+					</div>
+					<div class="reply-form--actions">
+						<button type="button" class="btn Comment-button action-btn-green disabled" disabled="disabled" id="comment--submit">Post</button>
+					</div>
+				</div>
+				<!--  -->
+			</div>
+
+			<div class="main-group--threads" id="main-group--threads">
+				<!-- Here be the past threads -->
+			</div>
+		</section>
+	</div>
+	<!-- Right panel (books panels: reading|wishlist|read) -->
+	<div class="col-md-3">
+		<!-- First reading -->
+		<div>
+			<!-- Reading book -->
+			<section class="main-group--reading panel">
+				<h2>Currently reading</h2>
+				<div class="main-group--reading-books">
+					<!-- List of book we are reading -->
+				</div>
+				<div class="main-group--read-button">
+					<button id="main-group--reading-add" class="btn action-btn-green disabled" disabled="disabled"><?php echo getTranslation('Mark a reading'); ?></button>
+				</div>
+				<div class="main-group--reading-book">
+					<div class="main-group--reading-icon">
+						<img class="main-group--reading-icon" src="/prologes/img/book_clear.png">
+					</div>
+					<h3 class="main-group--reading-title">Title of the Book</h3>
+					<span class="main-group--reading-authors">
+						by <a>Author One</a>, <a>Author Two</a>
+					</span>
+				</div>
+			</section>
+			<!-- Wishlist if any -->
+			<section class="main-group--wishlist-panel panel">
+				<h2><?php echo getTranslation('Our wishlist'); ?></h2>
+				<div class="main-group--wishlist" id="main-group--wishlist">
+					<div class="main-group--wishlist-books" id="main-group--wishlist-books">
+						<!-- Here the list of new books -->
+					</div>
+					<!-- <div class="main-group--wishlist-book">
+						<div class="wishlist-book--icon">
+							<img class="wishlist-book--icon" src="/prologes/img/book_dark.png">
+						</div>
+						<div class="wishlist-book--info">
+							<h3><a href="/index">The title of the book</a></h3>
+							<span>by <a>Author Name</a>, <a>Author name</a></span>
+						</div>
+					</div> -->
+
+					
+					<!-- Here be a list of books -->
+					<!-- Add a new book -->
+					<div class="main-group--wishlist-button">
+						<button id="main-group--wishlist-add" class="btn action-btn-green disabled" disabled="disabled"><?php echo getTranslation('Add to wishlist'); ?></button>
+					</div>
+				</div>
+			</section>
+			<!-- Read books -->
+			<section class="main-group--read-panel panel">
+				<h2>What we've read</h2>
+				<div class="main-group--read">
+					<!-- Here be a list of books -->
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+	<div class="container">
+		<h5>Prologes &copy; 2016 
+			<ul class="pull-right list-inline">
+				<li><a href="about">About us</a></li>
+				<li><a href="privacy">Terms and privacy</a></li>
+			</ul>
+		</h5>
+	</div>
+</footer>
+</body>
+</html>

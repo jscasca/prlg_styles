@@ -1,0 +1,55 @@
+
+@main-text-color: '';
+
+@main-color: '#173e43';
+@contrasting-color: '#fb0ac';
+@ligh-color: '#fae596';
+
+@prologes-nav-background: #3fb0ac;
+@prologes-nav-color: #ffffff;
+@prologes-nav-border: #e7e7e7;
+
+body {
+	background-color: #fafafa!important;
+	font-family:Lato,sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.5em;
+}
+
+/* Here goees the navbar */
+.header {
+
+	.navbar {
+		background-color: @prologes-nav-background;
+		color: @prologes-nav-color;
+		border-color: @prologes-nav-border;
+		border-radius: 0;
+
+		img.logo {
+			height: 3em;
+		}
+
+		.navbar-nav > li > a {
+			color: @prologes-nav-color;
+		}
+	}
+}
+
+// Container is the main body
+.container {
+	padding-top: 70px;
+}
+
+.prlg-panel {
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	border-radius: 8px;
+	margin-bottom: 5px;
+
+	.panel-content {
+		margin: 1em;
+		padding: 1em 1.5em 1em 1.5em;
+	}
+}

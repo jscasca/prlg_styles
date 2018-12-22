@@ -1,0 +1,24 @@
+body {
+  background-color: #fafafa !important;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
+}
+/* Here goees the navbar */
+.header .navbar {
+  background-color: #3fb0ac;
+  color: #ffffff;
+  border-color: #e7e7e7;
+  border-radius: 0;
+}
+.header .navbar img.logo {
+  height: 3em;
+}
+.header .navbar .navbar-nav > li > a {
+  color: #ffffff;
+}
+.container {
+  padding-top: 70px;
+}
