@@ -76,11 +76,8 @@
 		<div>
 			<!-- Group info -->
 			<section class="main-group">
-				<div class="main-group--icon">
+				<div class="icon">
 					<div class="" style="position:relative">
-						<div class="main-group--edit-button" id="edit-icon" tabindex='0' role='button'>
-							<i class="fas fa-pen edit-icon"></i>
-						</div>
 						<img alt="Group icon" id="club-icon" src="/prologes/img/user_clear.png">
 					</div>
 					<!-- <img alt="Group icon" id="group-icon" src="/prologes/img/user_clear.png"> -->
@@ -89,28 +86,48 @@
 				<!-- <h2 class="main-group--displayname" id="displayname"></h2>
 				<span class="main-group--groupname" id="groupname"></span> -->
 				<div id="edit-club--buttons" class="edit-club--buttons"></div>
-				<div class="main-group--info main-button" id="main-group--info">
-					<button class="btn action-btn-green">JOIN</button>
-				</div>
-				<div class="main-group--membership">
+				<div class="group-membership">
 					<!-- Info on your membership/buttons to join or request invitation -->
+					<button class="btn hover-button">
+						<span class="unfocused-text">MEMBER</span>
+						<span class="focused-text">LEAVE</span>
+					</button>
 				</div>
 			</section>
 			<!-- Members -->
 			<section>
 				<h2 class="main-group--members">Members</h2>
-				<div class="main-group--members" id="main-group--members">
+				<div class="group--members" id="main-group--members">
 					<!-- Sample member style -->
-					<!-- <div class="main-group--member">
-						<div class="main-group--member-icon">
-							<img class="main-group--member-icon" src='/prologes/img/user_clear.png'>
+					<div class="group-member">
+						<div class="icon">
+							<img class="icon" src='../img/user_clear.png'>
 						</div>
-						<div class="main-group--member-info">
-							<div class="member--display-name">Shorter name here</div>
-							<span class="member--user-name">@mrShortName</span>
+						<div class="info">
+							<div class="display-name"><a href="#">User with long name</a></div>
+							<span class="user-name"><a href="#">@mrIHaveAReallyLongName</a></span>
 						</div>
-					</div> -->
-					<!-- Here be members -->
+					</div>
+
+					<div class="group-member">
+						<div class="icon">
+							<img class="icon" src='../img/user_clear.png'>
+						</div>
+						<div class="info">
+							<div class="display-name"><a href="#">Average user X</a></div>
+							<span class="user-name"><a href="#">@yourAverageUser</a></span>
+						</div>
+					</div>
+
+					<div class="group-member">
+						<div class="icon">
+							<img class="icon" src='../img/user_clear.png'>
+						</div>
+						<div class="info">
+							<div class="display-name"><a href="#">Normal user</a></div>
+							<span class="user-name"><a href="#">@mrShortName</a></span>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -130,14 +147,14 @@
 		</section>
 
 		<section>
-			<div class="group-comment--area">
-				<div class="comment--form">
-					<div class="comment--textarea-container">
-						<textarea id="comment--textarea" class="comment--textarea" placeholder="Write a comment..."></textarea>
-						<div class="comment--error-area" id="comment--error-area"></div>
+			<div class="comment-area">
+				<div class="comment-form">
+					<div class="textarea-container">
+						<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
+						<div class="error-area" id="comment--error-area"></div>
 					</div>
-					<div class="reply-form--actions">
-						<button type="button" class="btn Comment-button action-btn-green disabled" disabled="disabled" id="comment--submit">Post</button>
+					<div class="actions-container">
+						<button type="button" class="btn main-btn" id="comment--submit">Post</button>
 					</div>
 				</div>
 				<!--  -->
@@ -150,60 +167,103 @@
 	</div>
 	<!-- Right panel (books panels: reading|wishlist|read) -->
 	<div class="col-md-3">
-		<!-- First reading -->
-		<div>
-			<!-- Reading book -->
-			<section class="main-group--reading panel">
-				<h2>Currently reading</h2>
-				<div class="main-group--reading-books">
-					<!-- List of book we are reading -->
-				</div>
-				<div class="main-group--read-button">
-					<button id="main-group--reading-add" class="btn action-btn-green disabled" disabled="disabled"><?php echo getTranslation('Mark a reading'); ?></button>
-				</div>
-				<div class="main-group--reading-book">
-					<div class="main-group--reading-icon">
-						<img class="main-group--reading-icon" src="/prologes/img/book_clear.png">
-					</div>
-					<h3 class="main-group--reading-title">Title of the Book</h3>
-					<span class="main-group--reading-authors">
-						by <a>Author One</a>, <a>Author Two</a>
-					</span>
-				</div>
-			</section>
-			<!-- Wishlist if any -->
-			<section class="main-group--wishlist-panel panel">
-				<h2><?php echo getTranslation('Our wishlist'); ?></h2>
-				<div class="main-group--wishlist" id="main-group--wishlist">
-					<div class="main-group--wishlist-books" id="main-group--wishlist-books">
-						<!-- Here the list of new books -->
-					</div>
-					<!-- <div class="main-group--wishlist-book">
-						<div class="wishlist-book--icon">
-							<img class="wishlist-book--icon" src="/prologes/img/book_dark.png">
-						</div>
-						<div class="wishlist-book--info">
-							<h3><a href="/index">The title of the book</a></h3>
-							<span>by <a>Author Name</a>, <a>Author name</a></span>
-						</div>
-					</div> -->
 
-					
-					<!-- Here be a list of books -->
-					<!-- Add a new book -->
-					<div class="main-group--wishlist-button">
-						<button id="main-group--wishlist-add" class="btn action-btn-green disabled" disabled="disabled"><?php echo getTranslation('Add to wishlist'); ?></button>
+		<!-- Tab panel -->
+		<div class="side-tab-panel">
+			<div class="">
+				<ul class="nav nav-tabs nav-fill">
+					<li class="active"><a href="#tab-reading" data-toggle="tab" id="tab-reading--anchor">Reading</a></li>
+					<li><a href="#tab-wishlist" data-toggle="tab" id="tab-wishlist--anchor">Wishlist</a></li>
+				</ul>
+			</div>
+			<div class="tab-content">
+				<!-- -->
+				<div id="tab-reading" class="tab-pane active fade in">
+					<!-- Currently reading-->
+					<div class="current-reading">
+						<div class="icon">
+							<img src="../img/book_clear.png">
+						</div>
+						<div class="info">
+							<a href="#">Title of the book</a>
+							<span class="author">Author</span>
+						</div>
+						<div class="actions">
+							<button class="btn main-btn">Finish</button>
+						</div>
 					</div>
 				</div>
-			</section>
-			<!-- Read books -->
-			<section class="main-group--read-panel panel">
-				<h2>What we've read</h2>
-				<div class="main-group--read">
-					<!-- Here be a list of books -->
+				<div id="tab-wishlist" class="tab-pane fade">
+					<!-- Wishlist-->
+						
+					<div class="group-wishlist">
+						<div class="selected-book">
+							<div class="book">
+								<div class="icon">
+									<img src="../img/book_clear.png">
+								</div>
+								<div class="info">
+									<a href="#" class="title">Title of the selected book</a>
+									<span class="author"><a href="#">Author 1</a>, <a href="#">Author 2</a></span>
+								</div>
+							</div>
+							<div class="actions">
+								<button class="btn main-btn">Move to reading</button>
+							</div>
+						</div>
+						<!-- -->
+						<div class="section-name">
+							<span>From the wishlist</span>
+						</div>
+						<div class="list">
+							<!-- upcoming books in the wishlist -->
+							<div class="book">
+								<div class="icon">
+									<img src="../img/book_clear.png">
+								</div>
+								<div class="info">
+									<span class="title">Title of the book</span>
+									<span class="author">Author 1, Author 2</span>
+								</div>
+							</div>
+							<!-- Sample books -->
+							<div class="book">
+								<div class="icon">
+									<img src="../img/book_clear.png">
+								</div>
+								<div class="info">
+									<span class="title">Title of the book</span>
+									<span class="author">Author 1, Author 2</span>
+								</div>
+							</div>
+							<!-- Sample books -->
+							<div class="book">
+								<div class="icon">
+									<img src="../img/book_clear.png">
+								</div>
+								<div class="info">
+									<span class="title">Title of the book</span>
+									<span class="author">Author 1, Author 2</span>
+								</div>
+							</div>
+							<!-- Sample books -->
+							<div class="book">
+								<div class="icon">
+									<img src="../img/book_clear.png">
+								</div>
+								<div class="info">
+									<span class="title">Title of the book</span>
+									<span class="author">Author 1, Author 2</span>
+								</div>
+							</div>
+
+						</div>
+					</div>
 				</div>
-			</section>
-		</div>
+			</div>
+				
+		</div> 
+		<!-- First reading -->
 	</div>
 </div>
 </div>

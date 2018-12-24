@@ -1,13 +1,26 @@
 
 @main-text-color: '';
 
-@main-color: '#173e43';
-@contrasting-color: '#fb0ac';
-@ligh-color: '#fae596';
+@main-color: #173e43;
+@contrasting-color: #3fb0ac;
+@ligh-color: #fae596;
+
+@main-button-color: @contrasting-color;
+@main-button-hover: @main-color;
+@main-button-text: #fff;
+@main-button-hover-text: @main-button-text;
 
 @prologes-nav-background: #3fb0ac;
 @prologes-nav-color: #ffffff;
 @prologes-nav-border: #e7e7e7;
+
+@prologes-red: red;
+@prologes-error-red: red;
+
+@name-color: #173e43;
+@handler-color: #4c7478;
+
+@title-color: #173e43;
 
 body {
 	background-color: #fafafa!important;
@@ -51,5 +64,295 @@ body {
 	.panel-content {
 		margin: 1em;
 		padding: 1em 1.5em 1em 1.5em;
+	}
+}
+
+// Components
+.btn.main-btn {
+	background-color: @main-button-color;
+	color: @main-button-text;
+
+	&:focus,
+	&:hover {
+		background-color: @main-button-hover;
+		color: @main-button-hover-text;
+	}
+}
+
+.title {
+	color: @title-color;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+// Group section
+
+.main-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.icon {
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.group-membership {
+		display: flex;
+		justify-content: center;
+		margin-top: 10px;
+	}
+
+	.hover-button {
+		width: 50%;
+
+		&:focus,
+		&:hover {
+			background-color: @prologes-red;
+
+			.unfocused-text {
+				display: none;
+			}
+
+			.focused-text {
+				display: block;
+			}
+		}
+
+		.unfocused-text {
+			color: black;
+			display: block;
+		}
+
+		.focused-text {
+			color: white;
+			display: none;
+		}
+
+	}
+}
+
+.group-member {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 10px;
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 8px;
+
+		.display-name {
+
+			a {
+				color: @name-color;
+				font-weight: 600;
+			}
+		}
+
+		.user-name {
+
+			a {
+			 color: @handler-color;
+			 font-size: 12px;
+			}
+		}
+	}
+
+	div.icon {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	img.icon {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.comment-area {
+	
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	margin-top: 1em;
+	margin-bottom: 7px;
+	padding-left: 10px;
+	border-radius: 4px;
+
+	.comment-form {
+		width: 100%;
+		margin: 5px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+
+		.actions-container {
+			display: flex;
+			flex-direction: column;
+
+			.btn {
+				margin-right: 10px;
+			}
+		}
+
+		.textarea-container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			textarea {
+				height: 66px;
+				width: 100%;
+				border: none;
+				outline: none;
+				resize: none;
+				font-size: 13px;
+			}
+
+			.error-area {
+				color: @prologes-error-red;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.side-tab-panel {
+	//
+
+	.tab-content {
+		background-color: #fff;
+		border: 1px solid #e4e4e4;
+		border-top: 0;
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+
+	.current-reading {
+		//
+
+		padding-bottom: 10px;
+
+		.actions {
+			margin-top: 10px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-right: 8px;
+			margin-left: 8px;
+		}
+
+		.icon {
+
+			img {
+				height: 150px;
+			}
+		}
+	}
+
+	.group-wishlist {
+		//
+
+		.actions {
+			margin-top: 10px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.section-name {
+			margin-top: 8px;
+			margin-left: 12px;
+			font-size: 16px;
+		}
+
+		.selected-book {
+			.book {
+				display: flex;
+				flex-direction: column;
+				margin-left: 8px;
+				margin-right: 8px;
+
+				.info {
+					.title {
+						text-decoration: none;
+						font-size: 16px;
+
+						&:focus,
+						&:hover {
+							text-decoration: none;
+						}
+					}
+
+					.author {
+						font-size: 14px;
+						a {
+							text-decoration: none;
+						}
+					}
+				}
+
+				.icon {
+
+					img {
+						height: 80px;
+					}
+				}
+			}
+		}
+
+		.list {
+			margin-top: 8px;
+			//
+			.book {
+				display: flex;
+				border-top: 1px solid #e4e4e4;
+
+				.info {
+					display: flex;
+					flex-direction: column;
+					margin-left: 8px;
+
+					.title {
+						font-size: 14px;
+						margin-top: 5px;
+						margin-bottom: 4px;
+					}
+
+					.author {
+						font-size: 10px;
+					}
+				}
+
+				.icon {
+
+					img {
+						height: 50px;
+						margin: 2px;
+						margin-right: 0;
+					}
+				}
+			}
+		}
 	}
 }
