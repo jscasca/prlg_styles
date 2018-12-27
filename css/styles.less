@@ -22,13 +22,32 @@
 
 @title-color: #173e43;
 
+@editable-border: #3fb0ac;
+
 body {
 	background-color: #fafafa!important;
 	font-family:Lato,sans-serif;
-	font-size: 14px;
+	font-size: 12px!important;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	line-height:1.5em;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.no-pad-right {
+	padding-right: 0!important;
+}
+
+.no-pad-left {
+	padding-left: 0!important;
+}
+
+.reduced-padding {
+	padding-left: 6px;
+	padding-right: 6px;
 }
 
 /* Here goees the navbar */
@@ -79,6 +98,54 @@ body {
 	}
 }
 
+.editable-area {
+	.wrapper {
+		border: 2px dashed @editable-border;
+
+		input, textarea {
+			border: none;
+			outline: none;
+			resize: none;
+			margin-top: 0!important;
+			width: 100%;
+		}
+	}
+}
+
+.upload-btn {
+	
+	input {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+	}
+
+	label {
+		color: @main-button-text;
+		background-color: @main-button-color;
+
+		&:focus,
+		&:hover {
+			background-color: @main-button-hover;
+			color: @main-button-hover-text;
+		}
+	}
+}
+
+.btn.submit-btn {
+	background-color: @main-button-color;
+	color: @main-button-text;
+
+	&:focus,
+	&:hover {
+		background-color: @main-button-hover;
+		color: @main-button-text;
+	}
+}
+
 .title {
 	color: @title-color;
 }
@@ -92,14 +159,87 @@ body {
 
 // Group section
 
+#main-group--editable {
+	display: none;
+}
+
 .main-group {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+
+	.info-panel {
+		margin-left: 20px;
+		margin-top: 10px;
+
+		.title {
+			font-size: 32px;
+			font-weight: 600;
+		}
+
+		.handle {
+			margin-top: 10px;
+			color: @handler-color;
+			font-size: 22px;
+		}
+
+		.description {
+			margin-top: 10px;
+			font-size: 16px;
+
+			textarea {
+				height: 130px;
+				line-height: 2em;
+			}
+		}
+	}
+
+	.icon-panel {
+		display: flex;
+		flex-direction: column;
+		padding: 10 30 10 30;
+
+		.actions {
+			display: flex;
+
+			& > * {
+				margin-top: 8px;
+			}
+		}
+
+		.edit-club {
+			justify-content: space-around;
+		}
+
+		.change-icon {
+			justify-content: center;
+		}
+	}
 
 	.icon {
 		display: flex;
 		justify-content: center;
+
+		.edit-button {
+			z-index: 2;
+			position: absolute;
+			right: 8px;
+			top: 10px;
+			margin: auto;
+			background-color: #3fb0ac;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+
+			.edit-icon {
+				color: #fff;
+				margin-top: 6px;
+				margin-left: 8px;
+			}
+		}
+
+		.cancel-edit {
+			background-color: @prologes-error-red!important;
+		}
 
 		img {
 			width: 140px;
@@ -113,11 +253,11 @@ body {
 	.group-membership {
 		display: flex;
 		justify-content: center;
-		margin-top: 10px;
+		margin-top: 20px;
 	}
 
 	.hover-button {
-		width: 50%;
+		width: 75%;
 
 		&:focus,
 		&:hover {
@@ -148,18 +288,26 @@ body {
 .group-member {
 	display: flex;
 	justify-content: flex-start;
-	margin-top: 10px;
+	margin-top: 5px;
 
 	.info {
 		display: flex;
 		flex-direction: column;
 		margin-left: 8px;
+		margin-top: 8px;
+		overflow: hidden;
+		white-space: nowrap;
 
 		.display-name {
 
 			a {
 				color: @name-color;
 				font-weight: 600;
+
+				div {
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
 			}
 		}
 
@@ -168,6 +316,13 @@ body {
 			a {
 			 color: @handler-color;
 			 font-size: 12px;
+			 overflow: hidden;
+			 text-overflow: ellipsis;
+
+				div {
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
 			}
 		}
 	}
@@ -181,8 +336,8 @@ body {
 
 	img.icon {
 		border-radius: 50%;
-		width: 50px;
-		height: 50px;
+		width: 48px;
+		height: 48px;
 	}
 }
 
