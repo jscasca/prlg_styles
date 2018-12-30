@@ -1,0 +1,47 @@
+
+.comment-area {
+	
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	margin-top: 1em;
+	margin-bottom: 7px;
+	padding-left: 10px;
+	border-radius: 4px;
+
+	.comment-form {
+		width: 100%;
+		margin: 5px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+
+		.actions-container {
+			display: flex;
+			flex-direction: column;
+
+			.btn {
+				margin-right: 10px;
+			}
+		}
+
+		.textarea-container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			textarea {
+				height: 66px;
+				width: 100%;
+				border: none;
+				outline: none;
+				resize: none;
+				font-size: 13px;
+			}
+
+			.error-area {
+				color: @prologes-error-red;
+				font-size: 12px;
+			}
+		}
+	}
+}

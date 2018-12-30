@@ -1,0 +1,298 @@
+// Group section
+
+#main-group--editable {
+	display: none;
+}
+
+.main-group {
+	display: flex;
+	justify-content: flex-start;
+
+	.info-panel {
+		margin-left: 20px;
+		margin-top: 10px;
+
+		.title {
+			font-size: 32px;
+			font-weight: 600;
+		}
+
+		.handle {
+			margin-top: 10px;
+			color: @handler-color;
+			font-size: 22px;
+		}
+
+		.description {
+			margin-top: 10px;
+			font-size: 16px;
+
+			textarea {
+				height: 130px;
+				line-height: 2em;
+			}
+		}
+	}
+
+	.icon-panel {
+		display: flex;
+		flex-direction: column;
+		padding: 10 30 10 30;
+
+		.actions {
+			display: flex;
+
+			& > * {
+				margin-top: 8px;
+			}
+		}
+
+		.edit-club {
+			justify-content: space-around;
+		}
+
+		.change-icon {
+			justify-content: center;
+		}
+	}
+
+	.icon {
+		display: flex;
+		justify-content: center;
+
+		.edit-button {
+			z-index: 2;
+			position: absolute;
+			right: 8px;
+			top: 10px;
+			margin: auto;
+			background-color: #3fb0ac;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+
+			.edit-icon {
+				color: #fff;
+				margin-top: 6px;
+				margin-left: 8px;
+			}
+		}
+
+		.cancel-edit {
+			background-color: @prologes-error-red!important;
+		}
+
+		img {
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.group-membership {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.hover-button {
+		width: 75%;
+
+		&:focus,
+		&:hover {
+			background-color: @prologes-red;
+
+			.unfocused-text {
+				display: none;
+			}
+
+			.focused-text {
+				display: block;
+			}
+		}
+
+		.unfocused-text {
+			color: black;
+			display: block;
+		}
+
+		.focused-text {
+			color: white;
+			display: none;
+		}
+
+	}
+}
+
+.group-member {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 5px;
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 8px;
+		margin-top: 8px;
+		overflow: hidden;
+		white-space: nowrap;
+
+		.display-name {
+
+			a {
+				color: @name-color;
+				font-weight: 600;
+
+				div {
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.user-name {
+
+			a {
+			 color: @handler-color;
+			 font-size: 12px;
+			 overflow: hidden;
+			 text-overflow: ellipsis;
+
+				div {
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+
+	div.icon {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	img.icon {
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+	}
+}
+
+.group-reading {
+  //
+
+  padding-bottom: 10px;
+
+  .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  .icon {
+
+    img {
+      height: 150px;
+    }
+  }
+}
+
+.group-wishlist {
+  //
+
+  .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-name {
+    margin-top: 8px;
+    margin-left: 12px;
+    font-size: 16px;
+  }
+
+  .selected-book {
+    .book {
+      display: flex;
+      flex-direction: column;
+      margin-left: 8px;
+      margin-right: 8px;
+
+      .info {
+        .title {
+          text-decoration: none;
+          font-size: 16px;
+
+          &:focus,
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .author {
+          font-size: 14px;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .icon {
+
+        img {
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .list {
+    margin-top: 8px;
+    .selected {
+      background-color: #e4e4e4;
+    }
+    //
+    .book {
+      display: flex;
+      border-top: 1px solid #e4e4e4;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+
+        .title {
+          font-size: 14px;
+          margin-top: 5px;
+          margin-bottom: 4px;
+        }
+
+        .author {
+          font-size: 10px;
+        }
+      }
+
+      .icon {
+
+        img {
+          height: 50px;
+          margin: 2px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
