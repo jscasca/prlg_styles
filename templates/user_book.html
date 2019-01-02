@@ -1,0 +1,403 @@
+
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet/less' href='../css/styles.less'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    </head>
+    <body>
+    <!-- NAVBAR -->
+    <header class="header">
+      <nav role="navigation" class="navbar navbar-custom navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" class="navlogo logo"/></a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+        <li class='dropdown'>
+          <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+            <div class='lang-selector'>
+              EN				</div>
+          </a>
+          <ul role='menu' class='dropdown-menu'>
+            <li>
+              <a href="#">English</a>
+              </li>
+            <li>
+              <a href="#">Español</a>
+              </li>
+          </ul>
+        </li>
+    
+        <li>
+          <form role="search" class="navbar-form navbar-right" action="/prologes/search">
+              <div class="input-group">
+                <input type="text" placeholder="Search" name="q" class="form-control input-sm">
+                <span class="input-group-btn">
+                  <button class="btn btn-default input-sm" type="submit">
+                    <span class="fas fa-search"></span>
+                  </button>
+                </span>
+              </div>
+          </form>
+        </li>
+            
+                <!-- NOT LOGGED IN -->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                      <div class="user-header">
+                        <div class="user-profile-pic">
+                          <!--<img src="img/defaultUser.png" class="" />-->
+                        </div>
+                        <div class="user-display-name">username</div>
+                      </div>
+                      <!--<img src="img/defaultUser.png" class="profile-pic" />!-->
+                      <!--Tin Kalzetin-->
+                    </a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Book clubs</a></li>
+                        <li><a href="#">Log out</a></li>
+                    </ul>
+                  </li>	
+        <!-- LOGGED IN -->
+                </ul>
+        </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- MAIN BODY -->
+    <div class="container">
+      <!-- Modals -->
+      <div class="col-md-12"></div>
+
+      <!-- Actual content -->
+      <div class="col-md-8 col-sm-12">
+        <section class="main-book prlg-panel">
+          <div class="book">
+            <div class="icon">
+              <img src="../img/user_clear.png">
+            </div>
+            <div class="info">
+              <div class="title">
+                <span>The Title of this Amazing Book</span>
+              </div>
+              <div class="author">
+                <span><a href="#">Author One</a>, <a href="#">Author Two</a></span>
+              </div>
+              <div class="rating">
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="far fa-star"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="actions">
+            <!-- WISHLIST-->
+            <div class="action" tabindex="0" role="button" title="Add to wishlist">
+              <span class="fas fa-book"></span>
+            </div>
+            <!-- FAVOURITE-->
+            <div class="action" tabindex="0" role="button" title="Add to wishlist">
+              <span class="fas fa-heart"></span>
+            </div>
+            <!-- PROLOGUE-->
+            <div class="action" tabindex="0" role="button" title="Add to wishlist">
+              <span class="fas fa-pen-nib"></span>
+            </div>
+            <!-- READING-->
+            <div class="action" tabindex="0" role="button" title="Add to readings">
+              <span class="fas fa-book-open"></span>
+            </div>
+          </div>
+        </section>
+
+        <div class="row">
+          <ul class="nav nav-tabs underline-tabs">
+            <li class="active"><a href="#tab-prologes" data-toggle="tab">Prologues</a></li>
+            <li><a href="#tab-comments" data-toggle="tab">Comments</a></li>
+            <li><a href="#tab-similar" data-toggle="tab">Similar</a></li>
+          </ul>
+        </div>
+
+        <div class="tab-content">
+          <!-- Prologues -->
+          <div class="tab-pane fade in active" id="tab-prologes">
+            <div class="book-prologes">
+              <div class="header"></div>
+              <div class="list">
+                <!-- A sample prologue -->
+                <div class="prologe prlg-panel">
+                  <div class="panel-content">
+                      <div class="icon">
+                        <img src="../img/user_dark.png">
+                      </div>
+                      <div class="content">
+                        <div class="prologue">
+                          Some average text about a book and how cool it was reading it. On average we are talking about 200 characters.
+                        </div>
+                        <div class="rating">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star"></span>
+                        </div>
+                        <div class="signature">
+                            <a href="#">username</a>
+                          </div>
+                        <div class="voting"></div>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Another prologue -->
+                <div class="prologe prlg-panel">
+                  <div class="panel-content">
+                      <div class="icon">
+                        <img src="../img/user_dark.png">
+                      </div>
+                      <div class="content">
+                        <div class="prologue">
+                            Some average text about a book and how cool it was reading it. On average we are talking about 200 characters. But it can go all the way up to 400 chars. For example this piece of writing uses 204 exactly
+                        </div>
+                        <div class="rating">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star"></span>
+                        </div>
+                        <div class="signature">
+                            <a href="#">username</a>
+                          </div>
+                        <div class="voting"></div>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Another prologue -->
+                <div class="prologe prlg-panel">
+                  <div class="panel-content">
+                      <div class="icon">
+                        <img src="../img/user_dark.png">
+                      </div>
+                      <div class="content">
+                        <div class="prologue">
+                            Some average text about a book and how cool it was reading it. On average we are talking about 200 characters. But it can go all the way up to 400 chars. For example this piece of writing that keeps going and going without actually saying anything interesting should be using around 400 characters. This may be the longest prologues allowed in the site. But we should plan for eventualities like this
+                        </div>
+                        <div class="rating">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star"></span>
+                        </div>
+                        <div class="signature">
+                            <a href="#">username</a>
+                          </div>
+                        <div class="voting"></div>
+                      </div>
+                  </div>
+                </div>
+                <!-- END SAMPLES -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Comments-->
+          <div class="tab-pane fade in" id="tab-comments">
+            <section>
+              <div class="comment-area">
+                <div class="comment-form">
+                  <div class="textarea-container">
+                    <textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
+                    <div class="error-area" id="comment--error-area"></div>
+                  </div>
+                  <div class="actions-container">
+                    <button type="button" class="btn main-btn" id="comment--submit">Post</button>
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+    
+              <div class="book-threads" id="book-threads">
+                <!-- Here be the past threads -->
+              </div>
+            </section>
+          </div>
+
+          <!-- -->
+          <div class="tab-pane fade in" id="tab-similar">
+            <!-- List similar books-->
+            <div class="similarities">
+              <!-- Sample similar book-->
+              <div class="similarity prlg-panel">
+                <div class="book">
+                  <div class="icon">
+                    <img src="../img/user_dark.png">
+                  </div>
+
+                  <div class="info">
+                    <span class="title"><a href="#">The title of the Book</a></span>
+                    <span class="author"><a href="#">Author One</a>, <a href="#">Author Two</a></span>
+                  </div>
+                </div>
+                <div class="voting">
+                  <div class="up">
+                    <i class="fas fa-chevron-up"></i>
+                  </div>
+                  <div class="counter">
+                    1M
+                  </div>
+                  <div class="down">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample similarity 2-->
+              <div class="similarity prlg-panel">
+                <div class="book">
+                  <div class="icon">
+                    <img src="../img/user_dark.png">
+                  </div>
+
+                  <div class="info">
+                    <span class="title"><a href="#">The title of the Book</a></span>
+                    <span class="author"><a href="#">Author One</a>, <a href="#">Author Two</a></span>
+                  </div>
+                </div>
+                <div class="voting">
+                  <div class="up">
+                    <i class="fas fa-chevron-up"></i>
+                  </div>
+                  <div class="counter">
+                    999K
+                  </div>
+                  <div class="down">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- End samples-->
+            </div>
+
+            <!-- User can add to similar-->
+            <div class='row suggest-similar'>
+              <div class='collapsible-button' data-toggle='collapse' data-target='#my-readings' tabindex='0' role='button' id='add-similar-book'>
+                <i class='fas fa-plus'></i>
+                <span class='' >Add a similar book</span>
+              </div>
+              <div class='collapse' id='my-readings'>
+                <div class='filter'>
+                  <div class='instructions'>
+                    <span>Suggest a similar book from the ones you have read.</span>
+                  </div>
+                  <div class='filter-textfield'>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="suggest-similar--filter">
+                      <span class="input-group-addon">
+                        <i class="fas fa-filter"></i>
+                      </span>
+                    </div>
+                    <!-- <input type='text' id='suggest-similar--filter' class='filter-textfield' placeholder='Filter'/> -->
+                </div>
+                </div>
+                <div class='my-readings'>
+                  <!-- List of books I have read -->
+                  <!-- Sample book 1-->
+                  <div class="suggestion prlg-panel">
+                    <div class="book">
+                      <div class="icon">
+                        <img src="../img/user_dark.png">
+                      </div>
+                      <div class="info">
+                        <span class="title">The Title of the Book</span>
+                        <span class="authors">Author One, Author Two</span>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <div>
+                        <button class="btn main-btn">Suggest as similar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End sample -->
+                  <!-- Sample book 2-->
+                  <div class="suggestion prlg-panel">
+                    <div class="book">
+                      <div class="icon">
+                        <img src="../img/user_clear.png">
+                      </div>
+                      <div class="info">
+                        <span class="title">The Title of the Book</span>
+                        <span class="authors">Author One, Author Two</span>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <div>
+                        <button class="btn main-btn">Suggest as similar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End sample -->
+                </div>
+              </div>
+            </div>
+            <!---->
+          </div>
+        </div>
+
+        <!-- Similar Books-->
+        
+
+      </div>
+    
+    </div>
+    
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <h5>Prologes &copy; 2016 
+          <ul class="pull-right list-inline">
+            <li><a href="about">About us</a></li>
+            <li><a href="privacy">Terms and privacy</a></li>
+          </ul>
+        </h5>
+      </div>
+    </footer>
+    </body>
+    </html>
+    <script>
+
+    
+    $(document).ready(function() {
+      $('#edit-icon').one('click', function() {
+        console.log('editable now');
+        showEditable('Editable name', 'Editable description\nOver multiple\nLines');
+      });
+    });
+    </script>
