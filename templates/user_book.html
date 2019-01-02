@@ -119,11 +119,11 @@
               <span class="fas fa-book"></span>
             </div>
             <!-- FAVOURITE-->
-            <div class="action" tabindex="0" role="button" title="Add to wishlist">
+            <div class="action active" tabindex="0" role="button" title="Add to favorites">
               <span class="fas fa-heart"></span>
             </div>
             <!-- PROLOGUE-->
-            <div class="action" tabindex="0" role="button" title="Add to wishlist">
+            <div class="action" tabindex="0" role="button" title="Write a prologue">
               <span class="fas fa-pen-nib"></span>
             </div>
             <!-- READING-->
@@ -264,14 +264,14 @@
                     <span class="author"><a href="#">Author One</a>, <a href="#">Author Two</a></span>
                   </div>
                 </div>
-                <div class="voting">
-                  <div class="up">
+                <div class="voting enabled">
+                  <div class="up" tabindex="0">
                     <i class="fas fa-chevron-up"></i>
                   </div>
                   <div class="counter">
                     1M
                   </div>
-                  <div class="down">
+                  <div class="down" tabindex="0">
                     <i class="fas fa-chevron-down"></i>
                   </div>
                 </div>
@@ -290,13 +290,38 @@
                   </div>
                 </div>
                 <div class="voting">
-                  <div class="up">
+                  <div class="up voted" tabindex="0">
                     <i class="fas fa-chevron-up"></i>
                   </div>
                   <div class="counter">
                     999K
                   </div>
-                  <div class="down">
+                  <div class="down" tabindex="0">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample similarity 3-->
+              <div class="similarity prlg-panel">
+                <div class="book">
+                  <div class="icon">
+                    <img src="../img/user_dark.png">
+                  </div>
+
+                  <div class="info">
+                    <span class="title"><a href="#">The title of the Book</a></span>
+                    <span class="author"><a href="#">Author One</a>, <a href="#">Author Two</a></span>
+                  </div>
+                </div>
+                <div class="voting">
+                  <div class="up" tabindex="0">
+                    <i class="fas fa-chevron-up"></i>
+                  </div>
+                  <div class="counter">
+                    -10
+                  </div>
+                  <div class="down voted" tabindex="0">
                     <i class="fas fa-chevron-down"></i>
                   </div>
                 </div>

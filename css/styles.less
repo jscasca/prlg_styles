@@ -3,7 +3,7 @@
 
 @main-color: #173e43;
 @contrasting-color: #3fb0ac;
-@ligh-color: #fae596;
+@light-color: #fae596;
 
 @main-button-color: @contrasting-color;
 @main-button-hover: @main-color;
@@ -32,6 +32,7 @@
 @import "comments.less";
 @import "group.less";
 @import "book.less";
+@import "author.less";
 
 body {
 	background-color: #fafafa!important;
@@ -166,6 +167,7 @@ body {
 		&:hover,
 		&:focus {
 			color: @title-highlight;
+			text-decoration: none;
 		}
 	}
 }
