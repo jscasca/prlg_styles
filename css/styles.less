@@ -10,6 +10,10 @@
 @main-button-text: #fff;
 @main-button-hover-text: @main-button-text;
 
+@prologes-icon-color: #173e43;
+@prologes-icon-hover: #fae596;
+@prologes-icon-active: #3fb0ac;
+
 @prologes-nav-background: #3fb0ac;
 @prologes-nav-color: #ffffff;
 @prologes-nav-border: #e7e7e7;
@@ -21,11 +25,13 @@
 @handler-color: #4c7478;
 
 @title-color: #173e43;
+@title-highlight: #efb0ac;
 
 @editable-border: #3fb0ac;
 
 @import "comments.less";
 @import "group.less";
+@import "book.less";
 
 body {
 	background-color: #fafafa!important;
@@ -85,7 +91,7 @@ body {
 
 	.panel-content {
 		margin: 1em;
-		padding: 1em 1.5em 1em 1.5em;
+		// padding: 1em 1.5em 1em 1.5em;
 	}
 }
 
@@ -153,6 +159,15 @@ body {
 
 .title {
 	color: @title-color;
+
+	a {
+		color: @title-color;
+
+		&:hover,
+		&:focus {
+			color: @title-highlight;
+		}
+	}
 }
 
 .icon {
@@ -160,6 +175,39 @@ body {
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+}
+
+.nav-tabs.underline-tabs {
+	margin: 1em;
+	background-color: #fafafa;
+	border-bottom: none;
+	font-size: 16px;
+
+	li.active > a {
+		background-color: #fafafa;
+		outline: none;
+		border: none;
+		border-bottom: 5px solid #173e43;
+
+		&:hover,
+		&:focus {
+			background-color: #fafafa;
+			border: none;
+			border-bottom: 5px solid #3fb0ac;
+		}
+	}
+
+	li > a {
+		outline: none;
+		border: none;
+
+		&:hover,
+		&:focus {
+			border: none;
+			background-color: #fafafa;
+			border-bottom: 5px solid #3fb0ac;
+		}
+	}
 }
 
 .side-tab-panel {
