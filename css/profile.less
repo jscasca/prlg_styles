@@ -1,0 +1,71 @@
+
+.main-profile {
+
+  display: flex;
+  padding: 25px;
+
+  .info {
+    margin-left: 22px;
+
+    .section {
+
+      font-size: 18px;
+      .field-name {
+        margin-left: 6px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .field-value {
+        display: flex;
+
+        .display-name {
+          color: @name-color;
+          font-size: 24px;
+        }
+
+        .username {
+          color: @handler-color;
+          font-size: 20px;
+        }
+
+        .action {
+          // font-size: 
+          margin-left: 10px;
+          font-size: 26px;
+          color: #173e43;
+        }
+      }
+    }
+  }
+
+  .icon-section {
+    display: flex;
+    flex-direction: column;
+
+    .actions {
+      display: flex;
+      margin-top: 8px;
+    }
+
+    .change-icon {
+      justify-content: center;
+    }
+
+    .edit-avatar {
+      justify-content: space-around;
+    }
+
+    .croppable-wrapper {
+      max-height: 300px;
+    }
+
+    .icon {
+
+      img {
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
