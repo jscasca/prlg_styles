@@ -1,4 +1,74 @@
 
 .main-user {
-  
+  display: flex;
+  padding: 25px;
+
+  .info {
+    margin-left: 18px;
+
+    .username {
+      font-size: 16px;
+      color: @handler-color;
+    }
+
+    .display-name {
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: @name-color;
+    }
+  }
+
+  .icon {
+    img {
+      height: 160px;
+      width: 160px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.user-prologes {
+  display: flex;
+  flex-wrap: wrap;
+
+  .prologe {
+    margin-top: 15px;
+    margin-right: 10px;
+    display: flex;
+    padding: 15px;
+    width: 90%;
+    align-self: center;
+
+    .content {
+      margin-left: 10px;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .prologue {
+        flex-grow: 1;
+      }
+
+      .title {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .rating {
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .icon {
+      align-self: flex-start;
+      img {
+        height: 100px;
+      }
+    }
+  }
 }
