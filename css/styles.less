@@ -25,9 +25,12 @@
 @handler-color: #4c7478;
 
 @title-color: #173e43;
-@title-highlight: #efb0ac;
+@title-highlight: #3fb0ac;
 
 @editable-border: #3fb0ac;
+
+@tablet: ~"(min-width:520px) and (max-width:940px)";
+@phone: ~"(max-width:519px)";
 
 @import "comments.less";
 @import "group.less";
@@ -224,4 +227,47 @@ body {
 		border-bottom-right-radius: 4px;
 		border-bottom-left-radius: 4px;
 	}
+}
+
+.prologe {
+	.rating {
+		display: flex;
+		justify-content: flex-end;
+		color: #fae596;
+	}
+}
+
+.default-book-list {
+	display: flex;
+	flex-wrap: wrap;
+	.book {
+		width: 30%;
+		@media @tablet {
+			width: 48%;
+		}
+		@media @phone {
+			width: 98%;
+		}
+		margin-top: 10px;
+		margin-right: 10px;
+    display: flex;
+    padding: 15px;
+
+    .info {
+      margin-left: 10px;
+      .title {
+				min-width: 120px;
+				max-width: 480px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .icon {
+      img {
+        height: 80px;
+      }
+    }
+  }
 }
