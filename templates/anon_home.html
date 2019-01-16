@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="../css/styles.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
@@ -25,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" class="navlogo logo"/></a>
+        <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" alt="logo" class="navlogo logo"/></a>
     </div>
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -34,7 +37,8 @@
 		<li class="dropdown">
 			<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 				<div class="lang-selector">
-					EN				</div>
+					<i class="material-icons">language</i>				
+				</div>
 			</a>
 			<ul role="menu" class="dropdown-menu">
 				<li>
@@ -45,29 +49,15 @@
 					</li>
 			</ul>
 		</li>
-
-		<li>
-      <form role="search" class="navbar-form navbar-right" action="/prologes/search">
-          <div class="input-group">
-            <input type="text" placeholder="Search" name="q" class="form-control input-sm">
-          	<span class="input-group-btn">
-							<button class="btn btn-default input-sm" type="submit">
-								<span class="fas fa-search"></span>
-							</button>
-          	</span>
-          </div>
-      </form>
-		</li>
         
             <!-- NOT LOGGED IN -->
-            			<li><a href="#">Log in</a></li>
+            			<i class="material-icons">person</i>
 		<!-- LOGGED IN -->
 		        </ul>
     </div>
     </div>
 </nav>
 	</header>
-	<div class="container">
 		<!--  -->
 		<!-- Modal to search for books -->
 <div id="index-modal" class="modal fade">
@@ -98,31 +88,19 @@
 
 <!-- Main -->
 	<div class="row">
-		<div class="welcome">
-			<!-- inicia sesion o registrate -->
-			<div class="col-md-4">
-				<div class="welcome-padding-top-left"></div>
-				<div class="prlg-panel welcome-login text-center">
-					<div class="panel-content">
-						<h5>Not a member?</h5>
-						<a href="register">Sign up!</a>
-						<h4>Already have an account?</h4>
-						<a href="login">Log in</a>
-					</div>
-				</div>
-			</div>
-			
+		<div class="Your-online-bookclub">
+	</div>
+		
 			<!-- Que es Prologes -->
-			<div class="col-md-4">
-				<div class="prlg-panel">
+			<div class="col-d-4">
+			  <div class="prlg-panel">
 					<div class="panel-header header text-center">
 						<div class="header-content">
-							<h1>Welcome</h1>
+							<h1>Your online bookclub</h1>
 						</div>
 					</div>
 					<div class="welcome-whatis--body">
-						<p>Join us and discover a new community for readers!</p>
-						<p>Wishlist what you want to read, share what you are reading and write prologues so other readers can find their next book!</p>
+						<p>Add books you want to read, discuss books you’re reading, get reading tips and write recommandations so other readers can find their next book!</p>
 					</div>
 
 				</div>
@@ -130,18 +108,8 @@
 			</div>
 			
 			<!-- Algo random -->
-			<div class="col-md-4">
-				<div class="welcome-padding-top-right"></div>
-				<div class="prlg-panel welcome-prologes">
-					<div class="panel-content">
-						<p>Start reading the prologues that the community has written!</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 <div class="row">	
-	<div class="index-search">
+	<div class="index-search center-block">
 		<form class="" action="search">
 			<div class="input-group">
 				<input class="form-control" id="index-search--field" type="text" name="q" placeholder="Find a book" />
@@ -151,14 +119,15 @@
 					</button>
 				</div>
 			</div>
-			
-		</form>
+	  </form>
 	</div>
 </div>
 </div>
+	
 <footer>
+	
 	<div class="container">
-		<h5>Prologes &copy; 2016 
+		<h5>Prologes &copy; 2019 
 			<ul class="pull-right list-inline">
 				<li><a href="about">About us</a></li>
 				<li><a href="privacy">Terms and privacy</a></li>
