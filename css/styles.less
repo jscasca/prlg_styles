@@ -29,7 +29,7 @@
 
 @editable-border: #3fb0ac;
 
-@tablet: ~"(min-width:520px) and (max-width:940px)";
+@tablet: ~"(min-width:520px) and (max-width:944px)";
 @phone: ~"(max-width:519px)";
 
 @import "comments.less";
@@ -38,6 +38,7 @@
 @import "author.less";
 @import "profile.less";
 @import "user.less";
+@import "search.less";
 
 body {
 	background-color: #fafafa!important;
@@ -240,8 +241,9 @@ body {
 .default-book-list {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	.book {
-		width: 30%;
+		width: 31%;
 		@media @tablet {
 			width: 48%;
 		}
