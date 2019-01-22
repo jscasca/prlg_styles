@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <link rel='stylesheet/less' href='../css/styles.less'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
@@ -86,157 +86,53 @@
 
 <!-- MAIN BODY -->
 <div class="container">
-
-	<!-- Left/Main -->
-	<div class="col-md-9 no-padding">
-		<div class="row">
-			<div class="cold-sm-12">
-				<section class="main-group" id="main-group--editable">
-					<div class="icon-panel">
-						<div class="icon">
-							<div class="" style="position:relative">
-								<div class="edit-button cancel-edit" id="cancel-edit" tabindex='0' role='button'>
-									<i class="fas fa-times edit-icon"></i>
-								</div>
-								<img alt="Group icon" id="club-icon" src="/prologes/img/user_clear.png">
-							</div>
-							<!-- <img alt="Group icon" id="group-icon" src="/prologes/img/user_clear.png"> -->
-						</div>
-						<div id="edit-icon--buttons" class="change-icon actions"></div>
-						<div id="edit-club--buttons" class="edit-club actions"></div>
-					</div>
-					<div class="info-panel">
-						<div class="">
-							<!-- -->
-							<div class="title editable" id="club-title--editable">
-							</div>
-							<div class="handle" id="club-handle--editable">
-								<span>@theHandleOfTheGroup<span>
-							</div>
-							<div class="description editable" id="club-description--editable">
-							</div>
-						</div>
-					</div>
-				</section>
+	<!-- GROUP HEADER-->
+	<div class="col-sm-12 col-md-8">
+		<!-- Here hte group header and info-->
+		<div class="main-group">
+			<!-- Main group needs to be reworked for responsibe layout-->
+			<div class="icon">
+				<img src="../img/user_dark.png" style="height: 120px;">
+			</div>
+			<div class="info">
+				<div class="display-name">The book club</div>
+				<div class="handle">@TheCoolBookClub</div>
+			</div>
+			<div class="info">
+				Some weird description header
+			</div>
+			<div class="actions">
+				<button class="btn main-btn">JOIN</button>
 			</div>
 		</div>
-			<div class="col-md-3 no-padding main-group--left-panel">
-				<!-- Group info -->
-				<section class="main-group" id="main-group--icon">
-					<div class="icon-panel">
-						<!-- Here the icon and join button-->
-						<div class="icon">
-							<div class="" style="position:relative">
-								<div class="edit-button" id="edit-icon" tabindex='0' role='button'>
-									<i class="fas fa-pen edit-icon"></i>
-								</div>
-								<img alt="Group icon" id="club-icon" src="/prologes/img/user_clear.png">
-							</div>
-							<!-- <img alt="Group icon" id="group-icon" src="/prologes/img/user_clear.png"> -->
+		<!-- <div style="width: 100%;height: 100%;background-color: red;"></div> -->
+
+		<!-- Hidden GROUP WALL: This hides on small screens-->
+		<div class="comments hidden-xs hidden-sm">
+			<section>
+				<div class="comment-area">
+					<div class="comment-form">
+						<div class="textarea-container">
+							<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
+							<div class="error-area" id="comment--error-area"></div>
 						</div>
-						<div class="group-membership">
-							<!-- Info on your membership/buttons to join or request invitation -->
-							<button class="btn hover-button">
-								<span class="unfocused-text">MEMBER</span>
-								<span class="focused-text">LEAVE</span>
-							</button>
+						<div class="actions-container">
+							<button type="button" class="btn main-btn" id="comment--submit">Post</button>
 						</div>
 					</div>
-				</section>
-				<!-- Members -->
-				<section>
-					<h2 class="main-group--members">Members</h2>
-					<div class="group--members" id="main-group--members">
-						<!-- Sample member style -->
-						<div class="group-member">
-							<div class="icon">
-								<img class="icon" src='../img/user_clear.png'>
-							</div>
-							<div class="info">
-								<span class="display-name"><a href="#"><div>User with long long name</div></a></span>
-								<span class="user-name"><a href="#"><div>@mrIHaveAReallyLongName</div></a></span>
-							</div>
-						</div>
+					<!--  -->
+				</div>
 
-						<div class="group-member">
-							<div class="icon">
-								<img class="icon" src='../img/user_clear.png'>
-							</div>
-							<div class="info">
-								<div class="display-name"><a href="#"><div>Average user X</div></a></div>
-								<span class="user-name"><a href="#"><div>@yourAverageUser</div></a></span>
-							</div>
-						</div>
-
-						<div class="group-member">
-							<div class="icon">
-								<img class="icon" src='../img/user_clear.png'>
-							</div>
-							<div class="info">
-								<div class="display-name"><a href="#"><div>Normal user</div></a></div>
-								<span class="user-name"><a href="#"><div>@mrShortName</div></a></span>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-
-			<!-- Main content (comments) -->
-			<div class="col-md-9 no-pad-right">
-				<!-- <div class="editable-area">
-					<div class="wrapper">
-						<input type="text" class="title" value="The club name">
-					</div>
-					<button class="btn action-btn-green">Save</button>
-				</div> -->
-				<section class="main-group" id="main-group--info">
-					<!-- Here the group info -->
-					<div class="info-panel">
-							<!-- -->
-							<div class="title" id="club-title">
-								<span>The Club's Name</span>
-							</div>
-							<div class="handle">
-								<span>@theHandleOfTheGroup<span>
-							</div>
-							<div class="description" id="club-description">
-								<p>A lengthy description</p>
-								<p>That may span multiple lines</p>
-								<p>Or not...</p>
-								<p>That may span multiple lines</p>
-								<p>Or not...</p>
-								<p>That may span multiple lines</p>
-								<p>Or not...</p>
-								<p>That may span multiple lines</p>
-								<p>Or not...</p>
-							</div>
-						</div>
-				</section>
-
-				<section>
-					<div class="comment-area">
-						<div class="comment-form">
-							<div class="textarea-container">
-								<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
-								<div class="error-area" id="comment--error-area"></div>
-							</div>
-							<div class="actions-container">
-								<button type="button" class="btn main-btn" id="comment--submit">Post</button>
-							</div>
-						</div>
-						<!--  -->
-					</div>
-
-					<div class="main-group--threads" id="main-group--threads">
-						<!-- Here be the past threads -->
-					</div>
-				</section>
-			</div>
+				<div class="main-group--threads" id="main-group--threads">
+					<!-- Here be the past threads -->
+				</div>
+			</section>
+		</div>
 	</div>
-			
-	<!-- Right panel (books panels: reading|wishlist|read) -->
-	<div class="col-md-3 no-pad-right">
 
+	<!-- GROUP BOOKS-->
+	<div class="col-sm-12 col-md-4">
+		<!-- Here everything related to books (reading/wishlist/read)-->
 		<!-- Tab panel -->
 		<div class="side-tab-panel">
 			<div class="">
@@ -332,7 +228,30 @@
 			</div>
 				
 		</div> 
-		<!-- First reading -->
+		<!-- <div style="width: 100%;height: 100%;background-color: green;"></div> -->
+		<!-- Also member can be here -->
+	</div>
+
+	<!-- GROUP WALL -->
+	<div class="col-sm-12 hidden-md hidden-lg">
+		<section>
+			<div class="comment-area">
+				<div class="comment-form">
+					<div class="textarea-container">
+						<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
+						<div class="error-area" id="comment--error-area"></div>
+					</div>
+					<div class="actions-container">
+						<button type="button" class="btn main-btn" id="comment--submit">Post</button>
+					</div>
+				</div>
+				<!--  -->
+			</div>
+
+			<div class="main-group--threads" id="main-group--threads">
+				<!-- Here be the past threads -->
+			</div>
+		</section>
 	</div>
 
 </div>
