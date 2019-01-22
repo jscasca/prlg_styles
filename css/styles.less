@@ -1,5 +1,5 @@
 
-@main-text-color: '';
+@main-text-color:'';
 
 @main-color: #173e43;
 @contrasting-color: #3fb0ac;
@@ -42,7 +42,7 @@
 
 body {
 	background-color: #fafafa!important;
-	font-family:Lato,sans-serif;
+	font-family:Raleway,sans-serif;
 	font-size: 12px!important;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
@@ -67,39 +67,57 @@ body {
 }
 
 /* Here goees the navbar */
-.header {
 
 	.navbar {
 		background-color: @prologes-nav-background;
 		color: @prologes-nav-color;
 		border-color: @prologes-nav-border;
-		border-radius: 0;
+		border-radius: 0 !important;
 
-		img.logo {
-			height: 3em;
+		.logo {	
+    max-height: 35px;
+			float: left;
+			padding-left: 2px;
+			margin-top: -7px;
 		}
-
-		.navbar-nav > li > a {
-			color: @prologes-nav-color;
+		
+		.navbar-nav {
+			list-style-type: none;
+			padding-right: 13px; 
 		}
 	}
-}
 
 // Container is the main body
-.container {
+
+.bookshelf-image {	
+	max-width: 90%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
 	padding-top: 70px;
 }
 
-.prlg-panel {
-	background-color: #fff;
-	border: 1px solid #e4e4e4;
-	border-radius: 8px;
-	margin-bottom: 5px;
+.row h1 {
+	font-family: Lora;
+	font-size: 70px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	padding-top: 10px;
+}
 
-	.panel-content {
-		margin: 1em;
-		// padding: 1em 1.5em 1em 1.5em;
-	}
+.row p {
+	font-family: Raleway;
+	font-size: 14px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	max-width: 500px;
+	padding-bottom: 20px;
+}
+
+.index-search {
+	padding-bottom: 120px;
 }
 
 // Components
@@ -183,51 +201,6 @@ body {
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-}
-
-.nav-tabs.underline-tabs {
-	margin: 1em;
-	background-color: #fafafa;
-	border-bottom: none;
-	font-size: 16px;
-
-	li.active > a {
-		background-color: #fafafa;
-		outline: none;
-		border: none;
-		border-bottom: 5px solid #173e43;
-
-		&:hover,
-		&:focus {
-			background-color: #fafafa;
-			border: none;
-			border-bottom: 5px solid #3fb0ac;
-		}
-	}
-
-	li > a {
-		outline: none;
-		border: none;
-
-		&:hover,
-		&:focus {
-			border: none;
-			background-color: #fafafa;
-			border-bottom: 5px solid #3fb0ac;
-		}
-	}
-}
-
-.side-tab-panel {
-	//
-
-	.tab-content {
-		background-color: #fff;
-		border: 1px solid #e4e4e4;
-		border-top: 0;
-		border-bottom-right-radius: 4px;
-		border-bottom-left-radius: 4px;
-	}
 }
 
 .prologe {

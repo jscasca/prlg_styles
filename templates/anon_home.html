@@ -1,163 +1,93 @@
 
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel='stylesheet/less' href='../css/styles.less'>
+<link rel="stylesheet/less" href="../css/styles.less">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="../css/styles.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
-<body>
-	<!--  -->
-	<header class="header">
-	<nav role="navigation" class="navbar navbar-custom navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" class="navlogo logo"/></a>
-    </div>
-    <!-- Collection of nav links, forms, and other content for toggling -->
-    <div id="navbarCollapse" class="collapse navbar-collapse">
-        
-        <ul class="nav navbar-nav navbar-right">
-		<li class='dropdown'>
-			<a data-toggle='dropdown' class='dropdown-toggle' href='#'>
-				<div class='lang-selector'>
-					EN				</div>
-			</a>
-			<ul role='menu' class='dropdown-menu'>
-				<li>
-					<a href="#">English</a>
-					</li>
-				<li>
-					<a href="#">Español</a>
-					</li>
-			</ul>
-		</li>
-
+	
+<body background="../img/regal.png">
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+			<img src="../img/prologes.png" alt="logo" class="navlogo logo"/>
+		</a>
+		
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    
+    <ul class="navbar-nav navbar-right nav-flex-icons">
+		<li class="nav-item">
+        	<a class="nav-link">
+          		<i class="material-icons">person</i>
+        	</a>
+      	</li>
+		
+		<li class="nav-item dropdown">
+        	<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+         		 <i class="material-icons">language</i>
+        	</a>
+      <ul role="menu" class="dropdown-menu">
 		<li>
-      <form role="search" class="navbar-form navbar-right" action="/prologes/search">
-          <div class="input-group">
-            <input type="text" placeholder="Search" name="q" class="form-control input-sm">
-          	<span class="input-group-btn">
-							<button class="btn btn-default input-sm" type="submit">
-								<span class="fas fa-search"></span>
-							</button>
-          	</span>
-          </div>
-      </form>
+			<a href="#">English</a>
 		</li>
-        
-            <!-- NOT LOGGED IN -->
-            			<li><a href="#">Log in</a></li>
-		<!-- LOGGED IN -->
-		        </ul>
-    </div>
-    </div>
+		<li>
+			<a href="#">Español</a>
+		</li>
+	</ul>
+      </li>
+    </ul>
+  </div>
 </nav>
-	</header>
-	<div class="container">
-		<!--  -->
-		<!-- Modal to search for books -->
-<div id="index-modal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form action="search">
-				<div class="modal-header text-center">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 id="index-modal--header"></h2>
-				</div>
-				<div class="modal-body text-center">
-					<div class="index-modal--info">
-						<span id="index-modal--text"></span>
-					</div>
-					<div class="input-group index-modal--search">
-						<input class="form-control" type="text" name="q" id="index-modal--field">
-						<div class="input-group-btn">
-							<button type="submit" class="btn search-button" id="index-modal--submit">
-								<i class="fas fa-search"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</form>
+
+	
+	<!-- Main -->
+	<div class="container-fluid">
+		<div class="row" >
+			<div class="col-md-6 col-md-offset-3">
+				<img class="bookshelf-image" src="../img/bookshelf.png" alt="Bookshelf"/>
+			</div>
 		</div>
-	</div>
-</div>
-
-<!-- Main -->
-	<div class="row">
-		<div class="welcome">
-			<!-- inicia sesion o registrate -->
-			<div class="col-md-4">
-				<div class="welcome-padding-top-left"></div>
-				<div class="prlg-panel welcome-login text-center">
-					<div class="panel-content">
-						<h5>Not a member?</h5>
-						<a href="register">Sign up!</a>
-						<h4>Already have an account?</h4>
-						<a href="login">Log in</a>
-					</div>
-				</div>
+		
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1>Your online bookclub</h1>
+				
+				<p>Add books you want to read, discuss books you’re reading, get reading tips and write recommandations so other readers can find their next book!</p>
 			</div>
-			
-			<!-- Que es Prologes -->
-			<div class="col-md-4">
-				<div class="prlg-panel">
-					<div class="panel-header header text-center">
-						<div class="header-content">
-							<h1>Welcome</h1>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="index-search center-block">
+					<form class="" action="search">
+						<div class="input-group">
+							<input class="form-control" id="index-search--field" type="text" name="q" placeholder="Find a book" />
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="index-search--submit" type="submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
 						</div>
-					</div>
-					<div class="welcome-whatis--body">
-						<p>Join us and discover a new community for readers!</p>
-						<p>Wishlist what you want to read, share what you are reading and write prologues so other readers can find their next book!</p>
-					</div>
-
-				</div>
-									
-			</div>
-			
-			<!-- Algo random -->
-			<div class="col-md-4">
-				<div class="welcome-padding-top-right"></div>
-				<div class="prlg-panel welcome-prologes">
-					<div class="panel-content">
-						<p>Start reading the prologues that the community has written!</p>
-					</div>
+	  				</form>
 				</div>
 			</div>
 		</div>
 	</div>
-<div class="row">	
-	<div class="index-search">
-		<form class="" action="search">
-			<div class="input-group">
-				<input class="form-control" id="index-search--field" type="text" name="q" placeholder="Find a book" />
-				<div class="input-group-btn">
-					<button class="btn btn-default" id="index-search--submit" type="submit">
-						<i class="glyphicon glyphicon-search"></i>
-					</button>
-				</div>
-			</div>
-			
-		</form>
-	</div>
-</div>
-</div>
+	
 <footer>
 	<div class="container">
-		<h5>Prologes &copy; 2016 
+		<h5>Prologes &copy; 2019 
 			<ul class="pull-right list-inline">
 				<li><a href="about">About us</a></li>
 				<li><a href="privacy">Terms and privacy</a></li>
