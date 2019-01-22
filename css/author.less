@@ -32,9 +32,17 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 
   .book {
+
+    width: 31%;
+    @media @tablet {
+      width: 48%;
+    }
+    @media @phone {
+      width: 98%;
+    }
 
     margin-top: 3em;
     margin-bottom: 15px;
@@ -54,7 +62,8 @@
       white-space: nowrap;
 
       .title {
-        font-size: 20px;
+        font-size: 16px;
+        text-align: center;
 
         a > * {
           max-width: 280px;
