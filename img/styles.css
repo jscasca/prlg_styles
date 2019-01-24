@@ -671,21 +671,53 @@ body {
   background-color: #3fb0ac;
   color: #ffffff;
   border-color: #e7e7e7;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 .navbar .logo {
-  height: 25px;
+  max-height: 35px;
+  float: left;
+  padding-left: 2px;
+  margin-top: -7px;
 }
 .navbar .navbar-nav {
   list-style-type: none;
+  padding-right: 13px;
 }
-.prlg-panel {
+.bookshelf-image {
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 70px;
+}
+.row h1 {
+  font-family: Lora;
+  font-size: 70px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+.row p {
+  font-family: Raleway;
+  font-size: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  padding-bottom: 20px;
+}
+.row p1 {
   font-family: Lora;
   text-align: center;
-  padding-top: 300px;
-  position: relative;
-  height: 100%;
-  width: 100%;
+  color: #3fb0ac;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.index-search {
+  padding-bottom: 120px;
 }
 .btn.main-btn {
   background-color: #3fb0ac;
@@ -791,19 +823,4 @@ body {
 }
 .default-book-list .book .icon img {
   height: 80px;
-}
-.header-content {
-  font-family: Lora;
-  font-size: 36px;
-}
-.welcome-whatis--body {
-  font-family: Raleway;
-  margin: auto;
-  padding-bottom: 30px;
-}
-.index-search {
-  padding-bottom: 120px;
-}
-.bookshelf-image {
-  max-width: 100%;
 }
