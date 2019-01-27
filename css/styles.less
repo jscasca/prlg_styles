@@ -29,8 +29,10 @@
 
 @editable-border: #3fb0ac;
 
-@tablet: ~"(min-width:520px) and (max-width:944px)";
-@phone: ~"(max-width:519px)";
+// @tablet: ~"(min-width:520px) and (max-width:944px)"; // small from 768 - 992
+@tablet: ~"(min-width:768) and (max-width:991)";
+// @phone: ~"(max-width:519px)"; // xs less than 768
+@phone: ~"(max-width:767px)";
 
 @import "comments.less";
 @import "group.less";

@@ -11,7 +11,7 @@
 rm -rf output/*
 mkdir output/phone
 mkdir output/tablet
-# mkdir output/web
+mkdir output/web
 concatenate=""
 ## Iterate
 for f in ./templates/*.html; do
@@ -19,7 +19,8 @@ for f in ./templates/*.html; do
   name_html="$(cut -d'/' -f3 <<<"$f")"
   name="$(cut -d'.' -f1 <<<"$name_html")"
   wkhtmltoimage --height 800 --width 414 "http://localhost/prlg_styles/templates/$name.html" "output/phone/$name.jpg"
-  wkhtmltoimage --height 800 --width 760 "http://localhost/prlg_styles/templates/$name.html" "output/tablet/$name.jpg"
+  # 768 is the first tablet value (or md) according to bootstrap
+  wkhtmltoimage --height 800 --width 768 "http://localhost/prlg_styles/templates/$name.html" "output/tablet/$name.jpg"
   wkhtmltoimage --height 800 --width 1200 "http://localhost/prlg_styles/templates/$name.html" "output/web/$name.jpg"
   echo $name
   concatenate="$concatenate ./$name.jpg"
