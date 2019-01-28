@@ -29,6 +29,8 @@
 
 @editable-border: #3fb0ac;
 
+@section-background-color: #fff;
+
 // @tablet: ~"(min-width:520px) and (max-width:944px)"; // small from 768 - 992
 @tablet: ~"(min-width:768) and (max-width:991)";
 // @phone: ~"(max-width:519px)"; // xs less than 768
@@ -42,6 +44,11 @@
 @import "user.less";
 @import "search.less";
 
+html {
+	height: 100%;
+	width: 100%;
+}
+
 body {
 	background-color: #fafafa!important;
 	font-family:Lato,sans-serif;
@@ -49,6 +56,78 @@ body {
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	line-height:1.5em;
+}
+
+.body-background {
+	width: 100%;
+	height: 100%;
+
+	.forgotten {
+		background: url(../img/login_1920.jpg) no-repeat;
+		background-size: cover;
+	}
+
+	.full-body {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+
+		.centered-section {
+
+			max-width: 450px;
+			align-self: center;
+			.content {
+				background-color: @section-background-color;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				padding: 25px;
+
+				display: flex;
+				flex-direction: column;
+
+				form {
+					display: flex;
+					flex-direction: column;
+					margin-left: 20px;
+					margin-right: 20px;
+					margin-bottom: 30px;
+					margin-top: 10px;
+
+					input {
+						height: 40px;
+					}
+				}
+
+				h2{
+					text-align: center;
+				}
+
+				h5 {
+					text-align: center;
+					margin-top: 10px;
+				}
+
+				.main-btn {
+					margin-left: auto;
+					margin-right: auto;
+					width: 50%
+				}
+			}
+			.header {
+				display: flex;
+				justify-content: center;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				background-color: @prologes-nav-background;
+				img {
+					margin: 5px;
+					height: 8em;
+				}
+			}
+		}
+	}
 }
 
 .no-padding {

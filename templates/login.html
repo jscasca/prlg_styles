@@ -1,0 +1,91 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<!-- <html lang="es"> Get this from a translation maybe-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet/less' href='../css/styles.less'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Log in</title>
+</head>
+<body class="body-background">
+    <div class="forgotten full-body">
+      <div class="centered-section">
+        <div class="header">
+          <a href="#">
+            <img src="../img/prologes.png">
+          </a>
+        </div>
+        <div class="content">
+          <h2>Log In</h2>
+          <form class="Login-form" id="registration--form">
+            <p>Start using Prologues by login in with your user and password</p>
+            <div class="form-group">
+              <label class="sr-only" for="">User</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="fa fa-user"></span></div>
+                    <input type="text" class="form-control" placeholder="User" name="user">
+                </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="">Password</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="fa fa-lock"></span></div>
+                    <input type="password" class="form-control" placeholder="Password" name="pwd">
+                </div>
+            </div>
+            <button type="send" class="btn main-btn">Log in</button>
+          </form>
+          <h5>Not a member? <a href="register">Sign up!</a></h5>
+          <h5><a href="forgotten">Forgot your password?</a></h5>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+	
+	<!-- <section class="Login text-center">
+		<div class="Login-header">
+			<a href="index"><img src="<?php echo $rootpath;?>img/prologes.png" /></a>
+		</div>
+		<div class="Login-container">
+			<h5><?php echo getTranslation('Start using Prologues by login in with your user and password'); ?></h5>
+			<form action="login" method="POST" class="Login-form">
+				<?php
+				if(isset($failureToLogin)) {
+					?>
+					<div class="login-error">
+						<p><?php echo getTranslation($failureToLogin); ?></p>
+					</div>
+					<?php
+				}
+				?>
+				<div class="form-group">
+					<label class="sr-only" for=""><?php echo getTranslation('User'); ?></label>
+				    <div class="input-group">
+				        <div class="input-group-addon"><span class="fa fa-user"></span></div>
+				        <input type="text" class="form-control" placeholder="<?php echo getTranslation('User'); ?>" name="user">
+				    </div>
+				</div>
+				<div class="form-group">
+					<label class="sr-only" for=""><?php echo getTranslation('Password'); ?></label>
+				    <div class="input-group">
+				        <div class="input-group-addon"><span class="fa fa-lock"></span></div>
+				        <input type="password" class="form-control" placeholder="<?php echo getTranslation('Password'); ?>" name="pwd">
+				    </div>
+				</div>
+				<button type="send" class="btn Basic-button Green-button"><?php echo getTranslation('Log in'); ?></button>
+				<h5><?php echo getTranslation('Not a member?'); ?> <a href="register"><?php echo getTranslation('Sign up!'); ?></a></h5>
+				<h5><a href="forgotten"><?php echo getTranslation('Forgot your password?'); ?></a></h5>
+			</form>
+		</div>
+	</section> -->
+</html>
