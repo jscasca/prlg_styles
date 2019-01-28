@@ -674,14 +674,17 @@ body {
   border-radius: 0 !important;
 }
 .navbar .logo {
-  max-height: 35px;
-  float: left;
-  padding-left: 2px;
-  margin-top: -7px;
+  max-height: 25px;
 }
 .navbar .navbar-nav {
   list-style-type: none;
   padding-right: 13px;
+}
+.navbar .navbar-nav > li > a {
+  line-height: 55px;
+}
+.navbar i.icon-black {
+  color: black;
 }
 .bookshelf-image {
   max-width: 90%;
