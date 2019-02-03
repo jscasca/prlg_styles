@@ -89,20 +89,55 @@
 	<!-- GROUP HEADER-->
 	<div class="col-xs-12 col-sm-8">
 		<!-- Here hte group header and info-->
-		<div class="main-group">
-			<!-- Main group needs to be reworked for responsibe layout-->
-			<div class="icon">
-				<img src="../img/user_dark.png" style="height: 120px;">
+		<div class="main-group hidden-xs">
+			<div class="horizontal">
+				<div class="left">
+					<div class="icon">
+						<img src="../img/user_dark.png">
+					</div>
+					<div class="actions">
+						<button class="btn main-btn">JOIN</button>
+					</div>
+				</div>
+				<div class="right">
+					<div class="info">
+						<div class="display-name">The Name of the Bookclub: A Unique name</div>
+						<div class="handle">@TheBookClub</div>
+					</div>
+					<div class="description  toggable-text">
+						<div class="content more">
+							<p>A few lines describing what the club is about.</p>
+							<p>It can be any type of content (text-only so far) but can span multiple nLines</p>
+							<p>-it can be a list-inline</p>
+							<p>-or some other things</p>
+							<p>>for example</p>
+						</div>
+						<div class="more-toggle">
+							<p class="more">read more...</p>
+							<p class="less">less...</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<div class="info">
-				<div class="display-name">The book club</div>
-				<div class="handle">@TheCoolBookClub</div>
-			</div>
-			<div class="info">
-				Some weird description header
-			</div>
-			<div class="actions">
-				<button class="btn main-btn">JOIN</button>
+		</div>
+
+		<div class="main-group hidden-sm hidden-md hidden-lg">
+			<div class="vertical">
+				<div class="icon">
+					<img src="../img/user_dark.png">
+				</div>
+				<div class="info">
+					<div class="display-name">The Name of the Bookclub: A Unique name</div>
+					<div class="handle">@TheBookClub</div>
+				</div>
+				<div class="description">
+					<p>A few lines describing what the club is about.</p>
+					<p>It can be any type of content (text-only so far) but can span multiple nLines</p>
+					<p>-it can be a list-inline</p>
+					<p>-or some other things</p>
+					<p>>for example</p>
+				</div>
 			</div>
 		</div>
 		<!-- <div style="width: 100%;height: 100%;background-color: red;"></div> -->
@@ -351,6 +386,11 @@ $(document).ready(function() {
 	$('#edit-icon').one('click', function() {
 		console.log('editable now');
 		showEditable('Editable name', 'Editable description\nOver multiple\nLines');
+	});
+
+	$('.more-toggle').on('click', function() {
+		$(this).siblings().toggleClass("more");
+		$(this).toggleClass("expanded");
 	});
 });
 </script>
