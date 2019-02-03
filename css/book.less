@@ -33,11 +33,21 @@
     .action.active {
       color: @prologes-icon-active;
     }
+
+    .action.disabled {
+      color: @prologes-icon-disabled;
+
+      &:hover,
+      &:focus {
+        color: @prologes-icon-disabled;
+      }
+    }
   }
 
   .info {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 
     .title {
       font-size: 32px;
@@ -60,6 +70,7 @@
   }
 
   .icon {
+    margin: 20px;
 
     img {
       height: 200px;

@@ -241,13 +241,62 @@
             <div class="content">
               <div class="description">Could not find what you were looking for?</div>
               <div class="actions">
-                <button class="btn">Add a book</button>
+                <button class="btn" onclick="(function(){$('#book-request-modal').modal('show');})()">Add a book</button>
               </div>
             </div>    
           </div>
           <!-- End Sample -->
       </div>
     </div>
+    <div id="book-request-modal" class="modal fade">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <form action="<?php echo $rootpath;?>php/submit/customBookRequest.php" method="POST" class="book-request-form" id="book-request-form">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title"><span id="modal-title-placeholder">Add a new book!</span></h3>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="requestTitle" id="request-title--label"></label>
+                    <input type="text" class="form-control" id="request-title" name="title" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <label for="request-authors" id="request-authors--label"></label>
+                    <div id="request-authors">
+                    <div class="form-group">
+                    <input type="text" class="form-control request-author" name="author[]" placeholder="Autor" />
+                    </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control request-author" name="author[]" placeholder="Autor" />
+                    </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label id="request-language--label"></label>
+                    <select name="language" >
+                      <option value="en">English</option>
+                      <option value="es">Español</option>
+                      <option value="fr">Italiano</option>
+                      <option value="it">Français</option>
+                      <!-- <option value="jp">JAP</option> -->
+                    </select>
+                  </div>
+                  <div id="error-msg"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="modal-footer--buttons text-center">
+                  <button type="button" class="btn main-btn" id="custom-request--submit">Add book</button>
+                </div>
+              <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>-->
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+
     <footer>
       <div class="container">
         <h5>Prologes &copy; 2016 
