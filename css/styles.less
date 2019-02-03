@@ -13,6 +13,7 @@
 @prologes-icon-color: #173e43;
 @prologes-icon-hover: #fae596;
 @prologes-icon-active: #3fb0ac;
+@prologes-icon-disabled: #e7e7e7;
 
 @prologes-nav-background: #3fb0ac;
 @prologes-nav-color: #ffffff;
@@ -67,6 +68,11 @@ body {
 		background-size: cover;
 	}
 
+	.construction {
+		background: url(../img/working.jpg) no-repeat;
+		background-size: cover;
+	}
+
 	.full-body {
 		width: 100%;
 		height: 100%;
@@ -74,12 +80,32 @@ body {
 		justify-content: center;
 		align-content: center;
 
+		.clear {
+			.header {
+				//
+			}
+
+			.content {
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				background-color: rgba(255,255,255,0.6);
+			}
+		}
+
+		.opaque {
+			.header {
+				background-color: @prologes-nav-background;
+			}
+			.content {
+				background-color: @section-background-color;
+			}
+		}
+
 		.centered-section {
 
 			max-width: 450px;
 			align-self: center;
 			.content {
-				background-color: @section-background-color;
 				border-bottom-left-radius: 4px;
 				border-bottom-right-radius: 4px;
 				padding: 25px;
@@ -120,7 +146,6 @@ body {
 				justify-content: center;
 				border-top-left-radius: 4px;
 				border-top-right-radius: 4px;
-				background-color: @prologes-nav-background;
 				img {
 					margin: 5px;
 					height: 8em;
@@ -157,7 +182,7 @@ body {
 		border-radius: 0;
 
 		img.logo {
-			height: 3em;
+			height: 4em;
 		}
 
 		.navbar-nav > li > a {
@@ -353,4 +378,15 @@ body {
       }
     }
   }
+}
+
+// Modal stuff
+.modal-header {
+	background-color: @prologes-nav-background;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.error-msg {
+	color: @prologes-error-red;
 }
