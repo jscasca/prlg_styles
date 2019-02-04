@@ -33,6 +33,97 @@
 
 .main-group {
 
+	display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+  .info {
+    text-align: center;
+  }
+
+  .horizontal {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+
+    .info {
+      margin-top: 20px;
+    }
+
+    .left {
+      justify-content: center;
+    }
+
+    .right {
+      margin-left: 15px;
+      margin-top: 10px;
+      width: 100%;
+
+      .description {
+        margin-top: 15px;
+
+        // More means is collapsed
+        .content.more {
+          max-height: 80px;
+          overflow: hidden;
+        }
+
+        .more-toggle.expanded {
+          .more {
+            display: none;
+          }
+        }
+        .more-toggle:not(.expanded) {
+          .less {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .icon {
+      margin-top: 10px;
+
+      img {
+
+      }
+    }
+
+    .actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .vertical {
+    flex-direction: column;
+    justify-content: center;
+
+    .info {
+      justify-content: center;
+    }
+  }
+
+  .icon {
+    //
+  }
+
+  .info {
+    .display-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: @name-color;
+    }
+
+    .handle {
+      margin-top: 10px;
+      color: @handler-color;
+      font-size: 16px;
+    }
+  }
+
 	.info-panel {
 		margin-left: 20px;
 		margin-top: 10px;
