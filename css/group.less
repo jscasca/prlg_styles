@@ -1,12 +1,37 @@
 // Group section
+@import "styles.less";
 
 #main-group--editable {
 	display: none;
 }
 
+.profile-section {
+	background: white;
+	position: relative;
+	top: 40px;
+	left: 20px; 
+	max-width: 60%;
+	padding: 10px 10px 16px 10px;
+	border: 1px solid @main-color;
+	
+	.profile-image {
+		max-width: 100%;
+	}
+	
+	.btn.join-btn {
+		background-color: @main-button-color;
+		color: @main-button-text;
+		box-shadow: 2px 2px 8px #888888; 
+
+		&:focus,
+		&:hover {
+			background-color: @main-button-hover;
+			color: @main-button-text;
+		}
+}
+}
+
 .main-group {
-	display: flex;
-	justify-content: flex-start;
 
 	.info-panel {
 		margin-left: 20px;
@@ -15,17 +40,21 @@
 		.title {
 			font-size: 32px;
 			font-weight: 600;
+			font-family: Lora;
+			padding-top: 20px;
 		}
 
 		.handle {
-			margin-top: 10px;
 			color: @handler-color;
-			font-size: 22px;
+			font-size: 18px;
+			font-family: Raleway;
 		}
 
 		.description {
 			margin-top: 10px;
-			font-size: 16px;
+			font-size: 14px;
+			font-family: Raleway;
+			padding-bottom: 40px;
 
 			textarea {
 				height: 130px;
@@ -34,102 +63,27 @@
 		}
 	}
 
-	.icon-panel {
-		display: flex;
-		flex-direction: column;
-		padding: 10 30 10 30;
-
-		.actions {
-			display: flex;
-
-			& > * {
-				margin-top: 8px;
-			}
-		}
-
-		.edit-club {
-			justify-content: space-around;
-		}
-
-		.change-icon {
-			justify-content: center;
-		}
-	}
-
-	.icon {
-		display: flex;
-		justify-content: center;
-
-		.edit-button {
-			z-index: 2;
-			position: absolute;
-			right: 8px;
-			top: 10px;
-			margin: auto;
-			background-color: #3fb0ac;
-			border-radius: 50%;
-			width: 25px;
-			height: 25px;
-
-			.edit-icon {
-				color: #fff;
-				margin-top: 6px;
-				margin-left: 8px;
-			}
-		}
-
-		.cancel-edit {
-			background-color: @prologes-error-red!important;
-		}
-
-		img {
-			width: 140px;
-			height: 140px;
-			border-radius: 50%;
-			margin-right: auto;
-			margin-left: auto;
-		}
-	}
-
+	
 	.group-membership {
-		display: flex;
-		justify-content: center;
 		margin-top: 20px;
 	}
+	
+}
 
-	.hover-button {
-		width: 75%;
-
-		&:focus,
-		&:hover {
-			background-color: @prologes-red;
-
-			.unfocused-text {
-				display: none;
-			}
-
-			.focused-text {
-				display: block;
-			}
-		}
-
-		.unfocused-text {
-			color: black;
-			display: block;
-		}
-
-		.focused-text {
-			color: white;
-			display: none;
-		}
-
-	}
+.main-group--members {
+	font-family: Lora;
+	font-size: 26px;
+	padding-top: 80px;
+	padding-bottom: 10px; 
+	padding-left: 20px;
 }
 
 .group-member {
 	display: flex;
 	justify-content: flex-start;
 	margin-top: 5px;
+	font-family: Raleway;
+	padding-left: 20px;
 
 	.info {
 		display: flex;
@@ -179,34 +133,67 @@
 		border-radius: 50%;
 		width: 48px;
 		height: 48px;
+		border: 1px solid @main-color;
 	}
 }
 
-.group-reading {
-  //
-
-  padding-bottom: 10px;
-
-  .actions {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+.actions {
+	  margin-top: 10px;
+	  display: flex;
+	  justify-content: center;
+	  font-family: Raleway;
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 8px;
-    margin-left: 8px;
-  }
+.reading-panel {
+	background: white;
+	max-height: auto;
+	border-bottom: 1px solid #D6D6D6;
+	border-left: 1px solid #D6D6D6;
+	border-right: 1px solid #D6D6D6;
 
-  .icon {
+	.title-reading {
+		font-family: Lora;
+		font-size: 22px;
+		padding-top: 50px;
+	}
 
-    img {
-      height: 150px;
-    }
+  	.info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 8px;
+		margin-left: 8px;
+	
+		font-family: Raleway;
+		font-size: 14px;
+		padding-bottom: 20px;
   }
+	
+	.book-image {
+		max-width: 60%;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+	.what_else {
+		font-family: Raleway;
+		font-size: 12px;
+		position: absolute;
+		bottom: 10px;
+		text-align: center;
+		color: black;
+  		border-bottom: 0px none;
+	}
+}
+
+.comment-area {
+	max-width: 600px;
+}
+
+.actions-container {
+	position: relative;
+  	right: 15px;
+	font-family: Raleway;
 }
 
 .group-wishlist {
@@ -259,9 +246,10 @@
     }
   }
 
-  .list {
+  .what_else_list {
     margin-top: 8px;
-    .selected {
+    
+	  .selected {
       background-color: #e4e4e4;
     }
     //
@@ -286,13 +274,12 @@
       }
 
       .icon {
-
-        img {
-          height: 50px;
-          margin: 2px;
-          margin-right: 0;
+		width: 100%;
+		height:auto;
+        margin: 2px;
+        margin-right: 0;
         }
       }
     }
   }
-}
+

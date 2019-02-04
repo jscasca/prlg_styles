@@ -32,7 +32,6 @@
 @phone: ~"(max-width:519px)";
 
 @import "comments.less";
-@import "group.less";
 @import "book.less";
 @import "author.less";
 @import "profile.less";
@@ -73,7 +72,7 @@ body {
 		border-radius: 0 !important;
 
 		.logo {	
-    		max-height: 25px;
+    		max-height: 35px;
 		}
 		
 		.navbar-nav {
@@ -143,17 +142,6 @@ body {
 	}
 }
 
-.btn.submit-btn {
-	background-color: @main-button-color;
-	color: @main-button-text;
-
-	&:focus,
-	&:hover {
-		background-color: @main-button-hover;
-		color: @main-button-text;
-	}
-}
-
 .title {
 	color: @title-color;
 
@@ -201,9 +189,10 @@ body {
 
     .info {
       margin-left: 10px;
+		
       .title {
-				min-width: 120px;
-				max-width: 480px;
+		min-width: 120px;
+		max-width: 480px;
         font-size: 14px;
         font-weight: 500;
         margin-top: 10px;
