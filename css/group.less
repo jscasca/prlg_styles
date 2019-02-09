@@ -12,7 +12,7 @@
 	left: 20px; 
 	max-width: 60%;
 	padding: 10px 10px 16px 10px;
-	border: 1px solid @main-color;
+	border: 1px solid #DDDBDB;
 	
 	.profile-image {
 		max-width: 100%;
@@ -34,9 +34,9 @@
 .main-group {
 
 	display: flex;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  	justify-content: flex-start;
+  	margin-bottom: 20px;
+  	flex-wrap: wrap;
 
   .info {
     text-align: center;
@@ -224,7 +224,7 @@
 		border-radius: 50%;
 		width: 48px;
 		height: 48px;
-		border: 1px solid @main-color;
+		border: 1px solid #DDDBDB;
 	}
 }
 
@@ -235,12 +235,18 @@
 	  font-family: Raleway;
   }
 
+.side-tab-panel {
+	position: relative;
+	top: 40px;
+	font-family: Raleway;
+}
+
 .reading-panel {
 	background: white;
 	max-height: auto;
-	border-bottom: 1px solid #D6D6D6;
-	border-left: 1px solid #D6D6D6;
-	border-right: 1px solid #D6D6D6;
+	border-left: 1px solid #DDDBDB;
+	border-right: 1px solid #DDDBDB;
+	border-bottom: 1px solid #DDDBDB;
 
 	.title-reading {
 		font-family: Lora;
@@ -266,19 +272,33 @@
 		padding-bottom: 40px;
 	}
 	
-	.what_else {
+	.panel-title {
 		font-family: Raleway;
 		font-size: 12px;
-		position: absolute;
-		bottom: 10px;
-		text-align: center;
 		color: black;
-  		border-bottom: 0px none;
 	}
+
+	.book > img {
+		max-width: 50%;
+	}
+	
+	.panel-heading  a:before {
+   		font-family: "Material Icons";
+   		content: "\e313"; //Weird number is from here: https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+   		float: right;
+   		transition: all 0.5s;
+	}
+	
+	.panel-heading.active a:before {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		transform: rotate(180deg);
+	} 
 }
 
 .comment-area {
 	max-width: 600px;
+	font-family: Raleway;
 }
 
 .actions-container {
@@ -373,4 +393,9 @@
       }
     }
   }
+
+.footer {
+	padding-top: 70px;
+	
+}
 
