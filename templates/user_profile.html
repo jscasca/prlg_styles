@@ -111,11 +111,32 @@
               <div class="info">
                 <div class="section">
                   <div class="field-name">Display name</div>
+                  <div class="field-editable"></div>
                   <div class="field-value">
                     <div class="value display-name">Your Display Name</div>
-                    <div class="action" tabindex="0" role="button">
+                    <div class="action" tabindex="0" role="button" id="edit-user--displayname">
                       <i class="fas fa-pen"></i>
                     </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <div class="field-name">Display name</div>
+                  <div class="field-editable">
+                    <div class="editable-area display-name">
+                      <div class="wrapper contained">
+                        <input type="input">
+                        <i class="action cancel fas fa-times" title="Cancel" tabindex="0" role="button"></i>
+                        <i class="action submit fas fa-check" title="Save" tabindex="0" role="button"></i>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <button class="btn">Cancel</button>
+                      <button class="btn main-btn">Save</button>
+                    </div>
+                    <!-- <div class="actions">
+                      <i class="fas fa-check"></i>
+                      <i class="fas fa-times"></i>
+                    </div> -->
                   </div>
                 </div>
                 <div class="section">
@@ -159,13 +180,60 @@
       };
     }
 
+    var createEditable = function(value, save, cancel, validate) {
+      if(validate === undefined) {
+        validate = function(input) {
+          return input !== '' && input.length < 25;
+        };
+      }
+      var input = $('<input>', {type: 'input'}).val(value);
+      // var cancelIcon = $('<i></i>', {class: 'action cancel fas fa-times', title: 'Cancel', tabindex: "0", role: 'button'}).on('click', cancel);
+      // var saveIcon = $('<i></i>', {class: 'action submit fas fa-check', title: 'Cancel', tabindex: "0", role: 'button'}).on('click', save);
+      var wrapper = $('<div></div>', {class: 'wrapper contained'}).append(input);
+      // .append(cancelIcon).append(saveIcon);
+      var inputHolder = $('<div></div>', {class: 'editable-are display-name'}).append(wrapper);
+
+      var cancelButton = $('<button></button>', {class: 'btn', title: 'Cancel', tabindex: "0", role: 'button'}).on('click', cancel).append(' Cancel');
+      var saveButton = $('<button></button>', {class: 'btn main-btn', title: 'Cancel', tabindex: "0", role: 'button'}).on('click', function() {
+        var inputValue = input.val();
+        if(validate(inputValue)) {
+          save(inputValue);
+        } else {
+          //
+        }
+      }).append('Save');
+      var controls = $('<div></div>', {class: 'actions'}).append(cancelButton).append(saveButton);
+
+      var holder = $('<div></div>', {class: 'editable-area display-name'}).append(inputHolder).append(controls);
+      return holder;
+    };
+
     
     $(document).ready(function() {
 
+      $('#edit-user--displayname').on('click', function() {
+        // clean all others
+        $('.field-editable').empty();
+        $('.field-value').css('display', 'flex');
+        // find the section
+        var section = $(this).closest('.section');
+        var editable = section.find('.field-editable');
+        var value = section.find('.field-value');
+
+        value.css('display', 'none');
+        var editableArea = createEditable(value.find('.value').text(), function(newValue) {
+          section.find('.field-value .value').empty().append(document.createTextNode(newValue));
+          $('.field-editable').empty();
+          $('.field-value').css('display', 'flex');
+        }, function() {
+          $('.field-editable').empty();
+          $('.field-value').css('display', 'flex');
+        });
+        editable.append(editableArea);
+        section.find('input').focus();
+      });
+
       $('#avatar-upload').change(function() {
-        // do the croppie thing
-        console.log('croping');
-        // add the buttons
         if(croppable == null) {
           //
           croppable = $('.croppable').croppie({

@@ -15,6 +15,9 @@
 @prologes-icon-active: #3fb0ac;
 @prologes-icon-disabled: #e7e7e7;
 
+@prologes-action-default: #dddfd4;
+@prologes-action-hover: #3fb0ac;
+
 @prologes-nav-background: #3fb0ac;
 @prologes-nav-color: #ffffff;
 @prologes-nav-border: #e7e7e7;
@@ -33,7 +36,7 @@
 @section-background-color: #fff;
 
 // @tablet: ~"(min-width:520px) and (max-width:944px)"; // small from 768 - 992
-@tablet: ~"(min-width:768) and (max-width:991)";
+@tablet: ~"(min-width:768px) and (max-width:991px)";
 // @phone: ~"(max-width:519px)"; // xs less than 768
 @phone: ~"(max-width:767px)";
 
@@ -221,6 +224,35 @@ body {
 }
 
 .editable-area {
+	.contained {
+		display: flex;
+
+		.action {
+			margin-top: 4px;
+			// margin-left: 3px;
+			margin-right: 9px;
+			color: @prologes-action-default;
+		}
+
+		.submit {
+			// color: @prologes-icon-color;
+
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+				color: #3fb0ac;
+			}
+		}
+		.cancel {
+			// color: @prologes-error-red;
+
+			&:hover,
+			&:focus {
+				opacity: 0.4;
+				color: @prologes-error-red;
+			}
+		}
+	}
 	.wrapper {
 		border: 2px dashed @editable-border;
 
