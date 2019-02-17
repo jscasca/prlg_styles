@@ -223,6 +223,28 @@ body {
 	}
 }
 
+.feedback-textarea {
+	textarea {
+		border: 4px dashed #3fb0ac;
+		background-color: #dddfd4;
+		outline: none;
+		resize: none;
+	}
+
+	textarea.required {
+		border: 4px dashed @prologes-error-red;
+	}
+
+	.feedback {
+		margin-top: -1.4em;
+		margin-right: 0.4em;
+		text-align: right;
+
+		font-size: 20px;
+		color: #173e43;
+	}
+}
+
 .editable-area {
 	.contained {
 		display: flex;
@@ -413,10 +435,33 @@ body {
 }
 
 // Modal stuff
-.modal-header {
-	background-color: @prologes-nav-background;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
+.modal-content {
+	.header {
+		padding-top: 1px;
+		padding-bottom: 5px;
+		background-color: @prologes-nav-background;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+
+		.title {
+			text-align: center;
+		}
+
+		.close {
+			margin-top: 20px;
+			margin-right: 10px;
+			margin-left: 10px; 
+		}
+	}
+
+	.body {
+		padding: 15px;
+	}
+
+	.footer {
+		padding: 15px;
+		border-top: 1px solid #dddfd4;
+	}
 }
 
 .error-msg {
