@@ -87,7 +87,33 @@
     <!-- MAIN BODY -->
     <div class="container">
       <!-- Modals -->
-      <div class="col-md-12"></div>
+      <div class="col-md-12">
+        <div id="prologe-modal" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content prologe-modal">
+              <div class="header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="title"><span id="modal-title-placeholder">Write a prologue!</span></h3>
+              </div>
+              <div class="body">
+                <div class="feedback-textarea">
+                  <textarea id="prologe-modal--textarea"></textarea>
+                  <div class="feedback" id="prologe-modal--feedback">120</div>
+                </div>
+                <div class="rating">
+                  <span id='modal-rating--label' >Rate</span>: <span id="prologe-modal--raty"></span>
+                </div>
+              </div>
+              <div class="footer">
+                <div class="actions">
+                  <button type="button" class="btn main-btn" id="prologe-modal--submit">Stamp!</button>
+                </div>
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Actual content -->
       <div class="col-md-8 col-sm-12">
@@ -123,7 +149,7 @@
               <span class="fas fa-heart"></span>
             </div>
             <!-- PROLOGUE-->
-            <div class="action" tabindex="0" role="button" title="Write a prologue">
+            <div class="action" id="action-prologe" tabindex="0" role="button" title="Write a prologue">
               <span class="fas fa-pen-nib"></span>
             </div>
             <!-- READING-->
@@ -244,6 +270,37 @@
     
               <div class="book-threads" id="book-threads">
                 <!-- Here be the past threads -->
+                <div class="thread">
+                  <div class="comment">
+                    <div class="icon">
+                      <img class="" src="../img/user_clear.png">
+                    </div>
+                    <div class="content">
+                      <div class="header">
+                        <a class="poster" href="./user.php?i=25"><span class="poster">someUsername</span></a>20 days ago
+                      </div>
+                      <div class="text">The second thread</div>
+                      <div class="footer"><span>[Collapse]</span><span>[Reply]</span></div>
+                    </div>
+                  </div>
+                  <div class="thread-nest">
+                    <div class="thread">
+                      <div class="comment">
+                        <div class="icon">
+                          <img class="" src="../img/user_dark.png">
+                        </div>
+                        <div class="content">
+                          <div class="header">
+                            <a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago
+                          </div>
+                          <div class="text">Ok so replying to the original thread...</div>
+                          <div class="footer"><span>[Reply]</span></div>
+                        </div>
+                      </div>
+                      <div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
+                <!-- Sample thread 2 -->
+                <div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">The second thread</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Ok so replying to the original thread...</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
+                <!-- END COMMENT SAMPLE-->
               </div>
             </section>
           </div>
@@ -420,6 +477,10 @@
 
     
     $(document).ready(function() {
+
+      $('#action-prologe').on('click', function() {
+        $("#prologe-modal").modal('show');
+      });
       $('#edit-icon').one('click', function() {
         console.log('editable now');
         showEditable('Editable name', 'Editable description\nOver multiple\nLines');
