@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="../scripts/group.js"></script>
 	</head>
 		
-	<body background="../img/regal.png">
+	<body background="../img/cream_pixels.png">
 			
 	<!-- NAVBAR -->
 	<nav class="navbar navbar-expand-lg">
@@ -55,25 +55,26 @@
 		
 		<!-- MAIN BODY -->
 		<div class="container-fluid">
-
+			<div class="row" style="height:40px"></div>
+			
 			<!-- Left panel (profile, members) -->
 			<div class="col-md-3">
 				<!-- Profile Section -->
-				<section class="profile-section">
+				<section class="profile-section center-block">
 					
-					<img class="profile-image center-block" src="../img/user_clear.png" alt="profile-image-alt">
+					<img class="profile-image center-block" src="../img/Profile.placeholder.png" alt="profile-image-alt">
 
 					<button class="btn join-btn center-block">JOIN</button>
 				</section>
 
 				<!-- Members section -->
-				<section>
-					<h2 class="main-group--members">Members</h2>
+				<section class="members-section center-block">
+					<h2>Members</h2>
 					<div class="group--members">
 						<!-- Sample member style -->
 						<div class="group-member">
 							<div class="icon">
-								<img class="icon" src="../img/user_clear.png" alt="icon">
+								<img class="icon" src="../img/Profile.placeholder.png" alt="icon">
 							</div>
 							
 							<div class="info">
@@ -84,7 +85,7 @@
 
 						<div class="group-member">
 							<div class="icon">
-								<img class="icon" src="../img/user_clear.png" alt="icon">
+								<img class="icon" src="../img/Profile.placeholder.png" alt="icon">
 							</div>
 							<div class="info">
 								<div class="display-name"><a href="#"><div>Average user X</div></a></div>
@@ -94,7 +95,7 @@
 
 						<div class="group-member">
 							<div class="icon">
-								<img class="icon" src="../img/user_clear.png" alt= "icon">
+								<img class="icon" src="../img/Profile.placeholder.png" alt= "icon">
 							</div>
 							<div class="info">
 								<div class="display-name"><a href="#"><div>Normal user</div></a></div>
@@ -108,10 +109,9 @@
 			<!-- Center panel (Club info and comments section) -->
 			<div class="col-md-6">
 						
-							<section class="main-group" id="main-group--info">
+							<section class="club-description-section">
 								<!-- Here the group info -->
-								<div class="info-panel">
-										<!-- -->
+								
 										<div class="title" id="club-title">
 											<span>The Club's Name</span>
 										</div>
@@ -123,10 +123,9 @@
 											<p>That may span multiple lines</p>
 											<p>Or not...</p>
 										</div>
-									</div>
 							</section>
 
-							<section>
+							<section class="comment-section">
 								<div class="comment-area">
 									<div class="comment-form">
 										<div class="textarea-container">
@@ -139,10 +138,16 @@
 									</div>	
 									<!--  -->
 								</div>
+								
+								<ul class="comment-list">
+									<li class="comment">
+									
+									
+									</li>
+								
+								</ul>
+									
 
-								<div class="main-group--threads" id="main-group--threads">
-									<!-- Here be the past threads -->
-								</div>
 							</section>
 			</div>
 
@@ -150,14 +155,14 @@
 			<div class="col-md-3">
 
 					<!-- Tab panel -->
-					<div class="side-tab-panel">
+					<div class="side-tab-panel center-block">
 						
 							<ul class="nav nav-tabs">
 								<li class="active">
 									<a href="#tab-reading" data-toggle="tab" id="tab-reading--anchor">Reading</a>
 								</li>
 								<li>
-									<a href="#tab-up_next" data-toggle="tab" id="tab-wishlist--anchor">Up Next</a>
+									<a href="#tab-up_next" data-toggle="tab" id="tab-wishlist--anchor">Next Up</a>
 								</li>
 							</ul>
 					
@@ -171,7 +176,7 @@
 									<div class="title-reading text-center">
 										Currently Reading
 									
-									<img class="book-image" src="../img/easychair_colour.png" alt= "book">
+									<img class="reading-image" src="../img/easychair_colour.png" alt= "book">
 										
 									<div class="info">
 										<a href="#">Title of the book</a>
@@ -179,7 +184,7 @@
 									</div>
 										
 									<div class="panel-group" id="reading-panel-group" role="tablist">
-  										<div class="panel">
+  										<div class="">
 											<div class = "panel-heading" role="tab">
       											<h4 class="panel-title">
         											<a role="button" data-toggle="collapse" data-parent="#reading-panel-group" href="#else-reading-panel">
@@ -189,6 +194,54 @@
 											</div>
 											
 											<div class="panel-collapse collapse" role="tabpanel" id="else-reading-panel">
+
+												<div class="panel-body">
+										
+													<!-- Sample books -->
+													<div class="book">
+														<img src="../img/book.png" alt="book" class="center-block">
+														
+														<span class="title center-block">Title of the book</span>
+														<span class="author center-block">Author 1, Author 2</span>
+														
+													</div>
+												</div>
+												
+											</div>
+  										</div>
+									</div>
+									
+								</div>
+							</div>
+								
+						</div>
+
+							<!-- Next up -->
+							<div class="tab-pane fade" id="tab-up_next">
+								
+								<div class="reading-panel">
+								
+									<div class="title-reading text-center">
+										Next Up
+									
+									<img class="next-up-image center-block" src="../img/Stack.png" alt= "book">
+										
+									<div class="info">
+										<a href="#">Title of the book</a>
+										<span class="author">Author</span>
+									</div>
+										
+									<div class="panel-group" id="next-up-panel-group" role="tablist">
+  										<div class="">
+											<div class = "panel-heading" role="tab">
+      											<h4 class="panel-title">
+        											<a role="button" data-toggle="collapse" data-parent="#next-up-panel-group" href="#else-reading-next-panel">
+														See what else we want to read
+													</a>
+      											</h4>
+											</div>
+											
+											<div class="panel-collapse collapse" role="tabpanel" id="else-reading-next-panel">
 
 												<div class="panel-body">
 										
@@ -210,7 +263,6 @@
 							</div>
 								
 						</div>
-
 					</div> 
 					<!-- First reading -->
 				</div>
