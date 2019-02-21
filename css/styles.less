@@ -1,7 +1,7 @@
 @main-text-color:'';
 
 @main-color: #173e43;
-@contrasting-color: #3fb0ac;
+@contrasting-color: #59A09C;
 @light-color: #fae596;
 
 @main-button-color: @contrasting-color;
@@ -11,7 +11,7 @@
 
 @prologes-icon-color: #173e43;
 @prologes-icon-hover: #fae596;
-@prologes-icon-active: #3fb0ac;
+@prologes-icon-active: #59A09C;
 @prologes-icon-disabled: #e7e7e7;
 
 @prologes-nav-background: #59A09C;
@@ -177,10 +177,17 @@ body {
 		color: @prologes-nav-color;
 		border-color: @prologes-nav-border;
 		border-radius: 0 !important;
+		position: relative;
+		max-height: 40px;
 		box-shadow: 1px 1px 2px #888888;
 
 		.logo {
     		max-height: 35px;
+			margin: 0;
+  			position: absolute;
+  			top: 50%;
+  			-ms-transform: translateY(-50%);
+  			transform: translateY(-50%);
 		}
 		
 		.navbar-nav {
@@ -191,6 +198,7 @@ body {
 		.navbar-nav > li > a {
  			line-height: 50px;
 			width: 100%;
+			max-height: 80%
   			
 		}
 		
@@ -198,7 +206,7 @@ body {
     		color: black;
 			padding-left: 6px;
       		padding-right: 6px;
-			padding-top: 24px;
+			padding-top: 16px;
 		}
 	}
 
