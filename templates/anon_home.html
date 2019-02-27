@@ -14,36 +14,48 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 	
-<body background="../img/regal.png">
+<body background="../img/cream_pixels.png">
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<a class="navbar-brand" href="#">
-			<img src="../img/prologes.png" alt="logo" class="navlogo logo"/>
-		</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  	<a class="navbar-brand" href="#">
+		<img src="../img/prologes.png" alt="logo" class="navlogo logo"/>
+	</a>
 		
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     
     <ul class="navbar-nav navbar-right nav-flex-icons">
-		<li class="nav-item">
-        	<a class="nav-link">
+		<li class="nav-item-profile dropdown">
+        	<a class="nav-link profile-dropdown-toggle" id="navbarProfileDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
           		<i class="material-icons icon-black">person</i>
         	</a>
-      	</li>
+				<ul role="menu" class="dropdown-menu">
+		<li>
+			<a href="#">Profile</a>
+		</li>
+		<li>
+			<a href="#">My library</a>
+		</li>
+		<li>
+			<a href="#">Log out</a>
+		</li>
+				</ul>
+		</li>	
 		
-		<li class="nav-item dropdown">
-        	<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+		<li class="nav-item-language dropdown">
+        	<a class="nav-link language-dropdown-toggle" id="navbarLanguageDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
          		 <i class="material-icons icon-black">language</i>
         	</a>
-      <ul role="menu" class="dropdown-menu">
+      			<ul role="menu" class="dropdown-menu">
 		<li>
 			<a href="#">English</a>
 		</li>
 		<li>
 			<a href="#">Español</a>
 		</li>
-	</ul>
-      </li>
+				</ul>
+      	</li>
     </ul>
   </div>
 </nav>

@@ -181,7 +181,7 @@
 
 .comment-section {
 	max-width: 90%;
-	padding-top: 60px;
+	padding-top: 80px;
 }
 
 .actions {
@@ -237,10 +237,16 @@
 		}
   }
 	
-	.edit-image {
+	.edit-reading-image {
 		position: absolute;
-		top: 122px;
-		left: 212px;
+		top: 154px;
+		left: 210px;
+	}
+	
+	.edit-nextup-image {
+		position: absolute;
+		top: 154px;
+		left: 210px;
 	}
 	
 	.reading-image {
@@ -258,6 +264,7 @@
 	}
 	
 	.panel-title {
+		text-decoration: none;
 		font-family: Raleway;
 		font-size: 12px;
 		color: black;
@@ -269,10 +276,22 @@
         transform: translate(-50%, -50%)
 	}
 
-	.book > img {
-		max-width: 60%;
+	.book {
 		padding-top: 50px;
 		padding-bottom: 50px;
+	}
+	
+	.book > a {
+		font-family: Raleway;
+		font-size: 12px;
+		color: @contrasting-color;
+	}
+	
+	.book > img {
+		max-width: 55%;
+		border: 1px solid @tab-border-color;
+		padding: 40px 15px 40px 15px;
+		margin-bottom: 40px;
 	}
 	
 	.book > span {
