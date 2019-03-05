@@ -3,7 +3,14 @@
 function readUrl(input) {
 	"use strict";
 	
-	console.log(input);	
+	if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function () {
+     
+		$('.profile-image-placeholder').attr('src',  reader.result);
+    };
+	reader.readAsDataURL(input.files[0]);	
+  }
 }
 
 $(document).ready(function () {
@@ -70,19 +77,27 @@ $(document).ready(function () {
 		$(editButton).prop('hidden', false);
 	});
 	
+	var profilePlaceholder = $('.profile-image-placeholder');
+	var savedSrc;
+	
 	$('#change-profile-image-button').click(function() {
+		
+		savedSrc = profilePlaceholder.attr('src');
 		
 		$('#change-profile-image-button').removeClass("in");
 		$('#edit-profile-dialog').addClass("in");
 	});
 	
 	$('#edit-profile-save-button').click(function() {
-		
+		$('#change-profile-image-button').addClass("in");
+		$('#edit-profile-dialog').removeClass("in");
 	});
 	
 	$('#edit-profile-cancel-button').click(function() {
 		
 		$('#change-profile-image-button').addClass("in");
 		$('#edit-profile-dialog').removeClass("in");
+		
+		$('.profile-image-placeholder').attr('src',  savedSrc);
 	});
 });
