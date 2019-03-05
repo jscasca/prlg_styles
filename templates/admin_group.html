@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		
-		<link rel="stylesheet/less" href="../css/styles.less">
 		<link rel="stylesheet/less" href="../css/group.less">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    	<script src="../dist/jquery.cropit.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 		<link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
@@ -66,22 +66,42 @@
 	</nav>	
 		
 		<!-- MAIN BODY -->
-		<div class="container-fluid">
 			<div class="row" style="height:40px"></div>
 			
 			<!-- Left panel (profile, members) -->
 			<div class="col-md-3">
+				
 				<!-- Profile Section -->
 				<section class="profile-section center-block">
 					
-					<img class="profile-image center-block" src="../img/Profile.placeholder.png" alt="profile-image-alt">
-					 	<div class="edit-image-profile">
-							<i class="material-icons icon-black">add_a_photo</i>
+					<div class="edit-profile-dialog fade" id="edit-profile-dialog">
+						
+						
+						<div class="form-group inputDnD">
+        					<input type="file" class="form-control-file" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Or drag & drop">
+      					</div>
+						
+						<button class="btn-btn-primary center-block">Browse</button>
+						
+						<div class="center-block">
+							
+							<button class="save-btn" id="edit-profile-save-button">Save</button>
+							<button class="cancel-btn" id="edit-profile-cancel-button">Cancel</button>
 						</div>
+					</div>
+					
+					<a href="#" class="edit-profile-image fade in" id="change-profile-image-button">
+  						
+      					<span class="glyphicon glyphicon-camera"></span>
+     					<span>Change Image</span>
 
-					<button class="btn join-btn center-block">JOIN</button>
+					</a>
+					
+					<img class="profile-image-placeholder center-block" src="../img/Profile.placeholder.png" alt="profile-image-alt">
+					
+					
 				</section>
-
+				
 				<!-- Members section -->
 				<section class="members-section center-block">
 					<h2>Members</h2>
@@ -143,8 +163,8 @@
 										<p><span class="underline"></span></p>
 									
 									<div class="row" id="edit-description-action-buttons" hidden>
-										<input type="button" id="save-club-description-button" value="Save"/>
-										<input type="button" id="cancel-club-description-button" value="Cancel"/>
+										<input class="save-btn" type="button" id="save-club-description-button" value="Save"/>
+										<input class="cancel-btn" type="button" id="cancel-club-description-button" value="Cancel"/>
 									</div>
 								</form>
 								
@@ -192,11 +212,14 @@
 									<div class="title-reading text-center">
 										Currently Reading
 											
+										<a href="#" class="edit-reading-image">
 											
-										<div class="edit-reading-image">
-											<i class="material-icons icon-black">add_photo_alternate</i>
-										</div>
-											<img class="reading-image" src="../img/easychair_colour.png" alt= "book">
+      										<span class="glyphicon glyphicon-camera"></span>
+     										<span>Change Image</span>
+
+										</a>
+										
+										<img class="reading-placeholder-image" src="../img/easychair_colour.png" alt= "book">
 										
 									<div class="info">
 										<a href="#">Title of the book</a>
@@ -243,10 +266,18 @@
 								
 									<div class="title-reading text-center">
 										Next Up
-									<div class="edit-nextup-image">
-										<i class="material-icons icon-black">add_photo_alternate</i>
-									</div>
-										<img class="next-up-image center-block" src="../img/Stack.png" alt= "book">
+										
+										<a href="#" class="edit-nextup-image">
+											
+  											<div class="nextup-pic" style="background-image: url('https://s3-eu-west-1.amazonaws.com/lynks-blog/wp-content/uploads/2016/10/11153439/rsz_1shutterstock_325243652.jpg')" >
+
+      										<span class="glyphicon glyphicon-camera"></span>
+     										<span>Change Image</span>
+
+ 						 					</div>
+										</a>
+									
+										<img class="nextup-placeholder-image center-block" src="../img/Stack.png" alt= "book">
 										
 									<div class="info">
 										<a href="#">Title of the book</a>
@@ -269,9 +300,9 @@
 										
 													<!-- Sample books -->
 													<div class="book">
-														<img src="../img/book_clear.png" alt="book" class="center-block">
+														<img src="../img/book.png" alt="book" class="center-block">
 														
-														<span class="title center-block">Title of the book</span>
+														<a href="#">Title of the book</a>
 														<span class="author center-block">Author</span>
 														
 													</div>

@@ -1,5 +1,11 @@
 // JavaScript Document
 
+function readUrl(input) {
+	"use strict";
+	
+	console.log(input);	
+}
+
 $(document).ready(function () {
 	
  "use strict";
@@ -62,5 +68,21 @@ $(document).ready(function () {
 	  	$(clubDesc).prop('disabled', true);
 		$(actionButtons).prop('hidden', true);
 		$(editButton).prop('hidden', false);
+	});
+	
+	$('#change-profile-image-button').click(function() {
+		
+		$('#change-profile-image-button').removeClass("in");
+		$('#edit-profile-dialog').addClass("in");
+	});
+	
+	$('#edit-profile-save-button').click(function() {
+		
+	});
+	
+	$('#edit-profile-cancel-button').click(function() {
+		
+		$('#change-profile-image-button').addClass("in");
+		$('#edit-profile-dialog').removeClass("in");
 	});
 });
