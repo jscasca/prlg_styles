@@ -127,7 +127,7 @@
                 <span>The Title of this Amazing Book</span>
               </div>
               <div class="author">
-                <span><a href="#">Author One</a>, <a href="#">Author Two</a></span>
+                <span><a href="#">Author With Long Name One</a>, <a href="#">Author Two</a></span>
               </div>
               <div class="rating">
                 <span class="fas fa-star"></span>
@@ -135,6 +135,17 @@
                 <span class="fas fa-star"></span>
                 <span class="fas fa-star"></span>
                 <span class="far fa-star"></span>
+              </div>
+              <div class="description expandable">
+                <div class="content not-expanded">
+                  <p>An audacious, darkly glittering novel set in the eerie days of civilization's collapse, Station Eleven tells the spellbinding story of a Hollywood star, his would-be savior, and a nomadic group of actors roaming the scattered outposts of the Great Lakes region, risking everything for art and humanity.</p>
+                  <p>One snowy night a famous Hollywood actor slumps over and dies onstage during a production of King Lear. Hours later, the world as we know it begins to dissolve. Moving back and forth in time—from the actor's early days as a film star to fifteen years in the future, when a theater troupe known as the Traveling Symphony roams the wasteland of what remains—this suspenseful, elegiac, spellbinding novel charts the strange twists of fate that connect five people: the actor, the man who tried to save him, the actor's first wife, his oldest friend, and a young actress with the Traveling Symphony, caught in the crosshairs of a dangerous self-proclaimed prophet.</p>
+                  <p>Sometimes terrifying, sometimes tender, Station Eleven tells a story about the relationships that sustain us, the ephemeral nature of fame, and the beauty of the world as we know it.</p>
+                </div>
+                <div class="controls not-expanded expandable-toggle">
+                  <p class="more">show more</p>
+                  <p class="less">show less</p>
+                </div>
               </div>
             </div>
           </div>
@@ -163,7 +174,7 @@
           <ul class="nav nav-tabs underline-tabs">
             <li class="active"><a href="#tab-prologes" data-toggle="tab">Prologues</a></li>
             <li><a href="#tab-comments" data-toggle="tab">Comments</a></li>
-            <li><a href="#tab-similar" data-toggle="tab">Similar</a></li>
+            <li><a href="#tab-similar" data-toggle="tab">Similar Books</a></li>
           </ul>
         </div>
 
@@ -367,7 +378,7 @@
                   </div>
 
                   <div class="info">
-                    <span class="title"><a href="#">The title of the Book</a></span>
+                    <span class="title"><a href="#">The long long long title of the Book</a></span>
                     <span class="author"><a href="#">Author One</a>, <a href="#">Author Two</a></span>
                   </div>
                 </div>
@@ -417,7 +428,7 @@
                         <img src="../img/user_dark.png">
                       </div>
                       <div class="info">
-                        <span class="title">The Title of the Book</span>
+                        <span class="title">The Long Long Long Title of the Book</span>
                         <span class="authors">Author One, Author Two</span>
                       </div>
                     </div>
@@ -484,6 +495,10 @@
       $('#edit-icon').one('click', function() {
         console.log('editable now');
         showEditable('Editable name', 'Editable description\nOver multiple\nLines');
+      });
+
+      $('.expandable-toggle').on('click', function() {
+        $(this).closest('.expandable').children().toggleClass('not-expanded');
       });
     });
     </script>

@@ -5,6 +5,15 @@
 
   .book {
     display: flex;
+
+    @media @phone {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .icon {
+      align-items: flex-start;
+    }
   }
 
   .actions {
@@ -49,6 +58,44 @@
     flex-direction: column;
     min-width: 0;
 
+    .description {
+      margin-top: 20px;
+      margin-right: 20px;
+
+      @media @phone {
+        margin-left: 18px;
+      }
+
+      .content {
+        font-size: 14px;
+        p {
+          text-align: justify;
+        }
+      }
+
+      .content.not-expanded {
+        max-height: 80px;
+        overflow: hidden;
+      }
+
+      .controls {
+        margin-top: 3px;
+        color: @link-color;
+        cursor: pointer;
+        p {
+          text-align: center;
+        }
+      }
+
+      .controls.not-expanded .less {
+        display: none;
+      }
+
+      .controls:not(.not-expanded) .more {
+        display: none;
+      }
+    }
+
     .title {
       font-size: 32px;
       font-weight: 600;
@@ -64,6 +111,10 @@
 
     .rating {
       display: flex;
+
+      @media @phone {
+        justify-content: center;
+      }
       color: #fae596;
       font-size: 26px;
     }
