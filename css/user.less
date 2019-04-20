@@ -3,8 +3,63 @@
   display: flex;
   padding: 25px;
 
+  @media @phone {
+    flex-direction: column;
+  }
+
+  .currently-reading {
+    margin-top: 20px;
+    margin-left: 6px;
+
+    .controls {
+      text-align: center;
+    }
+
+    .book-list {
+      margin-left: 8px;
+      text-align: left;
+    }
+
+    .description {
+      font-size: 14px;
+      //
+    }
+    .book {
+      display: flex;
+      margin-top: 10px;
+      .info {
+        @media @phone {
+          text-align: left;
+        }
+        margin-left: 10px;
+        .title {
+          min-width: 120px;
+          max-width: 480px;
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+      .icon {
+        img {
+          height: 80px;
+          width: initial;
+          border-radius: 0%;
+        }
+      }
+    }
+  }
+
   .info {
+
+    width: 100%;
     margin-left: 18px;
+
+    @media @phone {
+      text-align: center;
+      margin-left: 0px;
+    }
 
     .username {
       font-size: 16px;
