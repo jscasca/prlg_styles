@@ -1,0 +1,52 @@
+
+.my-currently-reading {
+  margin-left: 22px;
+  margin-top: 20px;
+
+  .description {
+    font-size: 14px;
+  }
+
+  .expandable-book-list {
+    .controls {
+      text-align: center;
+      color: @handler-color;
+      p {
+        cursor: pointer;
+      }
+    }
+    .controls.not-expanded .less {
+      display: none;
+    }
+
+    .controls:not(.not-expanded) .more {
+      display: none;
+    }
+
+    .content.not-expanded {
+      // We are playing with the fact that the margin are 10px and the img size is set to 60px
+      // In theory we should calculate this when the first element is displayed
+      max-height: 80px;
+    }
+
+    .content {
+      overflow: hidden;
+      .book {
+        margin-top: 10px;
+        display: flex;
+        .icon {
+          img {
+            height: 60px;
+          }
+        }
+        .info {
+          margin-left: 10px;
+          margin-top: 8px;
+          .title {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
