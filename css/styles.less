@@ -37,6 +37,8 @@
 
 @link-color: @handler-color;
 
+@custom-panel-bg-hover: fade(@contrasting-color, 40%);
+
 // @tablet: ~"(min-width:520px) and (max-width:944px)"; // small from 768 - 992
 @tablet: ~"(min-width:768px) and (max-width:991px)";
 // @phone: ~"(max-width:519px)"; // xs less than 768
@@ -288,6 +290,7 @@ body {
 			margin-top: 1px!important;
 			margin-left: 2px;
 			margin-right: 1px;
+			margin-bottom: 1px;
 			width: 99%;
 		}
 	}
@@ -348,11 +351,22 @@ body {
 	align-items: center;
 }
 
+.mobile-nav {
+	display: none;
+	@media @phone {
+		display: block;
+	}
+}
+
 .nav-tabs.underline-tabs {
 	margin: 1em;
 	background-color: #fafafa;
 	border-bottom: none;
 	font-size: 14px;
+
+	// Maybe only on mobile?
+	display: flex;
+	justify-content: space-between;
 
 	li.active > a {
 		background-color: #fafafa;
@@ -401,6 +415,38 @@ body {
 	}
 }
 
+.default-book-list.dialog {
+	.book {
+		// padding: 0;
+		width: 48%;
+		@media @phone {
+			width: 98%;
+		}
+
+		&:hover, &:focus {
+			background-color: @custom-panel-bg-hover;
+		}
+
+		// .icon {
+		// 	margin-left: 15px;
+		// 	margin-top: 15px;
+		// 	margin-bottom: 15px;
+		// }
+
+		// .info {
+		// 	margin-top: 15px;
+
+		// 	.actions {
+		// 		display: flex;
+		// 		justify-content: flex-end;
+		// 		margin-bottom: 15px;
+		// 		margin-right: 15px;
+		// 		margin-top: auto;
+		// 	}
+		// }
+	}
+}
+
 .default-book-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -419,6 +465,9 @@ body {
     padding: 15px;
 
     .info {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
       margin-left: 10px;
       .title {
 				min-width: 120px;
@@ -464,9 +513,24 @@ body {
 	.footer {
 		padding: 15px;
 		border-top: 1px solid #dddfd4;
+
+		.actions {
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
 
 .error-msg {
 	color: @prologes-error-red;
+}
+
+// Maybe take out here the exapndable controls?
+.expandable {
+	.controls.not-expanded .less {
+		display: none;
+	}
+	.controls:not(.not-expanded) .more {
+		display: none;
+	}
 }

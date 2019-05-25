@@ -2,13 +2,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- STYLES -->
+<!-- Prologes styles -->
 <link rel='stylesheet/less' href='../css/styles.less'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!-- Croppies CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css">
+<!-- Boostrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- JAVASCRIPT -->
+<!-- Jquery Slim: Bs required and functionality -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- Popper: pop ups in bootstrap -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- Boostrap: Scaffolding -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Croppie: Image cropping -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+<!-- Less: Styling -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+<!-- Font awesome icons -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- Prologes fav-icon -->
 <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
@@ -86,252 +103,566 @@
 
 <!-- MAIN BODY -->
 <div class="container">
+	<div class="col-sm-12">
+		<div class="modal fade wishlist-dialog" id="add-to-wishlist--dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="header">
+						<!--  -->
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="title"><span id="modal-title-placeholder">Add a book to the club wishlist</span></h3>
+					</div>
+					<div class="body">
+						<div class="filter">
+							<div class='instructions'>
+								<span>Select a book from your readings to add it to the club wishlist.</span>
+							</div>
+							<div class='filter-textfield'>
+								<div class="input-group">
+									<input type="text" class="form-control" id="add-to-wislist--filter">
+									<span class="input-group-addon">
+										<i class="fas fa-filter"></i>
+									</span>
+								</div>
+								<!-- <input type='text' id='suggest-similar--filter' class='filter-textfield' placeholder='Filter'/> -->
+							</div>
+						</div>
+						<div class="to-add-list default-book-list dialog aria-navigable-list" tabindex="0">
+							<!-- Here list the books -->
+							<!-- Sample result -->
+							<div class="book prlg-panel" tabindex="-1">
+									<div class="icon"><img src="../img/user_dark.png"></div>
+									<div class="info">
+										<div class="title">
+											Book Title
+										</div>
+										<div class="author">
+											Author One, Author Two
+										</div>
+									</div>
+								</div>
+							<!-- End Sample -->
+							<!-- Sample result -->
+								<div class="book prlg-panel" tabindex="-1">
+										<div class="icon"><img src="../img/user_dark.png"></div>
+										<div class="info">
+											<div class="title">
+												A book with a longer title
+											</div>
+											<div class="author">
+												Author One, Author Two
+											</div>
+										</div>
+									</div>
+								<!-- End Sample -->
+							<!-- Sample result -->
+								<div class="book prlg-panel" tabindex="-1">
+										<div class="icon"><img src="../img/user_clear.png"></div>
+										<div class="info">
+											<div class="title">
+												A Book With An Extra Extra EXTRA Long Title
+											</div>
+											<div class="author">
+												Author One, Author Two
+											</div>
+										</div>
+									</div>
+								<!-- End Sample -->
+							<!-- Sample result -->
+								<div class="book prlg-panel" tabindex="-1">
+										<div class="icon"><img src="../img/user_clear.png"></div>
+										<div class="info">
+											<div class="title">
+												The Book with the Longest Title that was ever written in the Stoy of Titles
+											</div>
+											<div class="author">
+												Author One, Author Two
+											</div>
+										</div>
+									</div>
+								<!-- End Sample -->
+							<!-- Sample result -->
+								<div class="book prlg-panel" tabindex="-1">
+										<div class="icon"><img src="../img/user_dark.png"></div>
+										<div class="info">
+											<div class="title">
+												Book Title
+											</div>
+											<div class="author">
+												Author One, Author Two
+											</div>
+										</div>
+									</div>
+								<!-- End Sample -->
+							<!-- Sample result -->
+								<div class="book prlg-panel" tabindex="-1">
+										<div class="icon"><img src="../img/user_clear.png"></div>
+										<div class="info">
+											<div class="title">
+												Book Title
+											</div>
+											<div class="author">
+												Author One, Author Two
+											</div>
+										</div>
+									</div>
+								<!-- End Sample -->
+						</div>
+					</div>
+					<div class="footer">
+						<div class="actions">
+								<button class="btn">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- GROUP HEADER-->
 	<div class="col-xs-12 col-sm-8">
 		<!-- Here hte group header and info-->
-		<div class="main-group hidden-xs">
-			<div class="horizontal">
-				<div class="left">
-					<div class="icon">
-						<img src="../img/user_dark.png">
+		<!-- <div style="width: 100%;height: 100%;background-color: red;"></div> -->
+		<div class="main-group prlg-panel">
+			<div class="group">
+				<div class="icon-section">
+					<div class="croppable-wrapper" id="croppable-wrapper">
+						<div class="croppable" id="croppable"></div>
 					</div>
-					<div class="actions">
-						<button class="btn main-btn">JOIN</button>
-					</div>
-				</div>
-				<div class="right">
-					<div class="info">
-						<div class="display-name">The Name of the Bookclub: A Unique name</div>
-						<div class="handle">@TheBookClub</div>
-					</div>
-					<div class="description  toggable-text">
-						<div class="content more">
-							<p>A few lines describing what the club is about.</p>
-							<p>It can be any type of content (text-only so far) but can span multiple nLines</p>
-							<p>-it can be a list-inline</p>
-							<p>-or some other things</p>
-							<p>>for example</p>
+					<div class="icon-controls" id="icon-controls"></div>
+					<div class="club-icon" id="club-icon">
+						<div class="icon">
+							<img class="croppable-img" src="../img/user_dark.png">
 						</div>
-						<div class="more-toggle">
-							<p class="more">read more...</p>
-							<p class="less">less...</p>
+						<div class="edit-control">
+							<div class="action" id="edit-club-icon">
+								<input type="file" id="change-icon">
+								<label for="change-icon"><i class="fas fa-pen"></i></label>
+							</div>
 						</div>
 					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="main-group hidden-sm hidden-md hidden-lg">
-			<div class="vertical">
-				<div class="icon">
-					<img src="../img/user_dark.png">
+					<!-- <div class="edit-control">
+						<div class="action" id="edit-club-icon" tabindex="0" role="button" title="Change club icon">
+							<input type="file" id="change-icon">
+							<label for="change-icon"><i class="fas fa-pen"></i></label>
+						</div>
+					</div> -->
 				</div>
 				<div class="info">
-					<div class="display-name">The Name of the Bookclub: A Unique name</div>
-					<div class="handle">@TheBookClub</div>
-				</div>
-				<div class="description">
-					<p>A few lines describing what the club is about.</p>
-					<p>It can be any type of content (text-only so far) but can span multiple nLines</p>
-					<p>-it can be a list-inline</p>
-					<p>-or some other things</p>
-					<p>>for example</p>
-				</div>
-			</div>
-		</div>
-		<!-- <div style="width: 100%;height: 100%;background-color: red;"></div> -->
-
-		<!-- Hidden GROUP WALL: This hides on small screens-->
-		<div class="comments hidden-xs">
-			<section>
-				<div class="comment-area">
-					<div class="comment-form">
-						<div class="textarea-container">
-							<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
-							<div class="error-area" id="comment--error-area"></div>
+					<div class="display-name editable" id="editable-display-name">
+						<div class="value" id="editable-display-name--value">The name of the book club
+							<span class="action" tabindex="0" role="button" id="edit-club-display-name" title="Change club name">
+								<i class="fas fa-pen"></i>
+							</span>
 						</div>
-						<div class="actions-container">
-							<button type="button" class="btn main-btn" id="comment--submit">Post</button>
-						</div>
-					</div>
-					<!--  -->
-				</div>
-
-				<div class="main-group--threads" id="main-group--threads">
-					<!-- Here be the past threads -->
-					<!-- Here be the past threads -->
-					<div class="thread">
-							<div class="comment">
-								<div class="icon">
-									<img class="" src="../img/user_clear.png">
-								</div>
-								<div class="content">
-									<div class="header">
-										<a class="poster" href="./user.php?i=25"><span>someUsername</span></a>20 days ago
-									</div>
-									<div class="text">The second thread</div>
-									<div class="footer"><span>[Collapse]</span><span>[Reply]</span></div>
-								</div>
-							</div>
-							<div class="thread-nest">
-									<div class="comment-area">
-										<div class="comment-form">
-											<div class="textarea-container">
-												<textarea class="" placeholder="Reply..." reply-to="16"></textarea>
-												<div class="error-area"></div>
-											</div>
-											<div class="actions">
-												<button class="btn main-btn">Post</button>
-												<button class="btn">Cancel</button>
-											</div>
-										</div>
-									</div>
-								<div class="thread">
-									<div class="comment">
-										<div class="icon">
-											<img class="" src="../img/user_dark.png">
-										</div>
-										<div class="content">
-											<div class="header">
-												<a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago
-											</div>
-											<div class="text">Ok so replying to the original thread...</div>
-											<div class="footer"><span>[Reply]</span></div>
-										</div>
-									</div>
-									<div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
-						<!-- Sample thread 2 -->
-						<div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">The second thread</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Ok so replying to the original thread...</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
-						<!-- END COMMENT SAMPLE-->
-				</div>
-			</section>
-		</div>
-	</div>
-
-	<!-- GROUP BOOKS-->
-	<div class="col-xs-12 col-sm-4">
-		<!-- Here everything related to books (reading/wishlist/read)-->
-		<!-- Tab panel -->
-		<div class="side-tab-panel">
-			<div class="">
-				<ul class="nav nav-tabs nav-fill">
-					<li class="active"><a href="#tab-reading" data-toggle="tab" id="tab-reading--anchor">Reading</a></li>
-					<li><a href="#tab-wishlist" data-toggle="tab" id="tab-wishlist--anchor">Wishlist</a></li>
-				</ul>
-			</div>
-			<div class="tab-content">
-				<!-- -->
-				<div id="tab-reading" class="tab-pane active fade in">
-					<!-- Currently reading-->
-					<div class="group-reading">
-						<div class="icon">
-							<img src="../img/book_clear.png">
-						</div>
-						<div class="info">
-							<a href="#">Title of the book</a>
-							<span class="author">Author</span>
-						</div>
-						<div class="actions">
-							<button class="btn main-btn">Finish</button>
-						</div>
-					</div>
-				</div>
-				<div id="tab-wishlist" class="tab-pane fade">
-					<!-- Wishlist-->
-						
-					<div class="group-wishlist">
-						<div class="selected-book">
-							<div class="book">
-								<div class="icon">
-									<img src="../img/book_clear.png">
-								</div>
-								<div class="info">
-									<a href="#" class="title">Title of the selected book</a>
-									<span class="author"><a href="#">Author 1</a>, <a href="#">Author 2</a></span>
+						<div class="field-editable">
+							<div class="editable-area">
+								<div class="wrapper contained">
+									<input type="input" id="editable-display-name--input">
 								</div>
 							</div>
 							<div class="actions">
-								<button class="btn main-btn">Move to reading</button>
+								<button class="btn cancel">Cancel</button>
+								<button class="btn main-btn save">Save</button>
 							</div>
 						</div>
-						<!-- -->
-						<div class="section-name">
-							<span>From the wishlist</span>
+					</div>
+					<div class="handle">@thehandle</div>
+					<div class="description">
+						<div class="expandable">
+							<div class="content not-expanded">
+								<p>Some lines of content that go over and over until the cover a couple of lines but it is the same paragraph. You can't even tell where it ends.</p>
+								<p>Another line of content</p>
+								<p>More and more lines of the club description going over and over</p>
+								<p>One last line or so I think</p>
+							</div>
+							<div class="editable-control" id="edit-club-description">
+								<div class="" tabindex="0" role="button" title="Change club description"><i class="fas fa-pen"></i></div>
+							</div>
+							<div class="controls expandable-toggle not-expanded">
+								<p class="more">Show more...</p>
+								<p class="less">Show less...</p>
+							</div>
 						</div>
-						<div class="list">
-							<!-- upcoming books in the wishlist -->
-							<div class="book">
-								<div class="icon">
-									<img src="../img/book_clear.png">
+						<div class="editable text-editable">
+								<div class="editable-area">
+									<div class="wrapper contained">
+										<textarea id="editable-description--input">
+											Some content\n over multiple\n lines that keeps going\nand going
+										</textarea>
+									</div>
 								</div>
-								<div class="info">
-									<span class="title">Title of the book</span>
-									<span class="author">Author 1, Author 2</span>
-								</div>
-							</div>
-							<!-- Sample books -->
-							<div class="book">
-								<div class="icon">
-									<img src="../img/book_clear.png">
-								</div>
-								<div class="info">
-									<span class="title">Title of the book</span>
-									<span class="author">Author 1, Author 2</span>
+								<div class="actions">
+									<button class="btn cancel">Cancel</button>
+									<button class="btn main-btn save">Save</button>
 								</div>
 							</div>
-							<!-- Sample books -->
-							<div class="book">
-								<div class="icon">
-									<img src="../img/book_clear.png">
-								</div>
-								<div class="info">
-									<span class="title">Title of the book</span>
-									<span class="author">Author 1, Author 2</span>
-								</div>
-							</div>
-							<!-- Sample books -->
-							<div class="book">
-								<div class="icon">
-									<img src="../img/book_clear.png">
-								</div>
-								<div class="info">
-									<span class="title">Title of the book</span>
-									<span class="author">Author 1, Author 2</span>
-								</div>
-							</div>
-
-						</div>
 					</div>
 				</div>
 			</div>
-				
-		</div> 
-		<!-- <div style="width: 100%;height: 100%;background-color: green;"></div> -->
-		<!-- Also member can be here -->
+		</div>
+
+		<div class="mobile-nav" id="mobile-reorder-nav">
+			<ul class="nav nav-tabs underline-tabs">
+				<li><a href="#tab-members" data-toggle="tab">Members</a></li>
+				<li class="active"><a href="#tab-comments" data-toggle="tab">Comments</a></li>
+				<li><a href="#tab-books" data-toggle="tab">Books</a></li>
+			</ul>
+		</div>
+
+		<div class="mobile-nav tab-content">
+			<!--  -->
+			<div class="tab-pane fade in" id="tab-members">
+				<div class="holder" id="tab-members-holder">
+					<!-- List the members and button to invite people/join';/>...... -->
+					<section class="members" id="members-component">
+						<div class="section-header">
+							Members
+						</div>
+						<div class="info">
+							<!-- list -->
+							<div class="membership">
+								<div class="member">
+									<div class="role">You are a member</div>
+									<div class="actions">
+										<button class="btn">LEAVE CLUB</button>
+									</div>
+								</div>
+								<div class="guest">
+									<div class="actions">
+										<button class="btn main-btn">JOIN CLUB</button>
+									</div>
+								</div>
+							</div>
+							<div class="club-members">
+								<!-- Memeber 1 -->
+								<div class="member">
+									<div class="icon">
+										<img src="../img/user_dark.png">
+									</div>
+									<div class="info">
+										<div class="display-name">
+											<a href="#"><div>Some rnadom extra long name</div></a>
+										</div>
+										<div class="username">
+											<a href="#"><div>@somerandomusername</div></a>
+										</div>
+									</div>
+								</div>
+								<!-- Memeber 1 -->
+								<div class="member">
+									<div class="icon">
+										<img src="../img/user_dark.png">
+									</div>
+									<div class="info">
+										<div class="display-name">
+											<a href="#"><div>Some rnadom extra long name</div></a>
+										</div>
+										<div class="username">
+											<a href="#"><div>@somerandomusername</div></a>
+										</div>
+									</div>
+								</div>
+								<!-- Memeber 1 -->
+								<div class="member">
+									<div class="icon">
+										<img src="../img/user_dark.png">
+									</div>
+									<div class="info">
+										<div class="display-name">
+											<a href="#"><div>Some rnadom extra long name</div></a>
+										</div>
+										<div class="username">
+											<a href="#"><div>@somerandomusername</div></a>
+										</div>
+									</div>
+								</div>
+								<!-- Memeber 1 -->
+								<div class="member">
+									<div class="icon">
+										<img src="../img/user_dark.png">
+									</div>
+									<div class="info">
+										<div class="display-name">
+											<a href="#"><div>Some rnadom extra long name</div></a>
+										</div>
+										<div class="username">
+											<a href="#"><div>@somerandomusername</div></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="actions">
+							<button class="main-btn btn">Invite</button>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="tab-pane fade in active" id="tab-comments">
+				<div class="holder" id="tab-comment-holder">
+					<section id="comments-component">
+						<div class="comment-area">
+							<div class="comment-form">
+								<div class="textarea-container">
+									<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
+									<div class="error-area" id="comment--error-area"></div>
+								</div>
+								<div class="actions">
+									<button type="button" class="btn main-btn" id="comment--submit">Post</button>
+								</div>
+							</div>
+							<!--  -->
+						</div>
+		
+						<div class="main-group--threads" id="main-group--threads">
+							<!-- Here be the past threads -->
+							<!-- Here be the past threads -->
+							<div class="thread">
+									<div class="comment">
+										<div class="icon">
+											<img class="" src="../img/user_clear.png">
+										</div>
+										<div class="content">
+											<div class="header">
+												<a class="poster" href="./user.php?i=25"><span>someUsername</span></a>20 days ago
+											</div>
+											<div class="text">The second thread</div>
+											<div class="footer"><span>[Collapse]</span><span>[Reply]</span></div>
+										</div>
+									</div>
+									<div class="thread-nest">
+											<div class="comment-area">
+												<div class="comment-form">
+													<div class="textarea-container">
+														<textarea class="" placeholder="Reply..." reply-to="16"></textarea>
+														<div class="error-area"></div>
+													</div>
+													<div class="actions">
+														<button class="btn main-btn">Post</button>
+														<button class="btn">Cancel</button>
+													</div>
+												</div>
+											</div>
+										<div class="thread">
+											<div class="comment">
+												<div class="icon">
+													<img class="" src="../img/user_dark.png">
+												</div>
+												<div class="content">
+													<div class="header">
+														<a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago
+													</div>
+													<div class="text">Ok so replying to the original thread...</div>
+													<div class="footer"><span>[Reply]</span></div>
+												</div>
+											</div>
+											<div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
+								<!-- Sample thread 2 -->
+								<div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">The second thread</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Ok so replying to the original thread...</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">Was this really necessary?</div><div class="footer"><span>[Collapse]</span><span>[Reply]</span></div></div></div><div class="thread-nest"><div class="thread"><div class="comment"><div class="icon"><img class="" src="../img/user_dark.png"></div><div class="content"><div class="header"><a class="poster" href="./user.php?i=25"><span class="user-label label">someUsername</span></a>20 days ago</div><div class="text">And this?</div><div class="footer"><span>[Reply]</span></div></div></div><div class="thread-nest"></div></div></div></div></div></div>
+								<!-- END COMMENT SAMPLE-->
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="tab-pane fade in" id="tab-books">
+				<div class="holder" id="tab-books-holder">
+					<div class="side-tab-panel" id="books-component">
+						<div class="">
+							<ul class="nav nav-tabs">
+								<li class="active nav-item"><a href="#tab-reading" data-toggle="tab" id="tab-reading--anchor">Reading</a></li>
+								<li class="nav-item"><a href="#tab-wishlist" data-toggle="tab" id="tab-wishlist--anchor">Wishlist</a></li>
+								<li class="nav-item"><a href="#tab-library" data-toggle="tab" id="tab-library--anchor">Library</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<!-- -->
+							<div id="tab-reading" class="tab-pane active fade in">
+								<!-- Currently reading-->
+								<div class="group-reading">
+									<div class="icon">
+										<img src="../img/book_dark.png">
+									</div>
+									<div class="info">
+										<div class="title">
+											<a href="#">The Lord of the Rings</a>
+										</div>
+										<div class="author"><a href="#">Author 1</a>, <a href="#">Author 2</a></div>
+									</div>
+									<div class="actions">
+										<button class="btn main-btn">Finish</button>
+									</div>
+								</div>
+							</div>
+							<div id="tab-wishlist" class="tab-pane fade">
+								<!-- Wishlist-->
+									
+								<div class="group-wishlist">
+									<div class="selected-book" id="selected-book">
+										<!-- <div class="book">
+											<div class="icon">
+												<img src="../img/book_clear.png">
+											</div>
+											<div class="info">
+												<a href="#" class="title">Title of the selected book</a>
+												<span class="author"><a href="#">Author 1</a>, <a href="#">Author 2</a></span>
+											</div>
+										</div>
+										<div class="actions">
+											<button class="btn main-btn">Move to reading</button>
+										</div> -->
+									</div>
+									<!-- -->
+									<div class="section-name">
+										<span>Our wishlist</span>
+									</div>
+									<div class="list">
+										<!-- upcoming books in the wishlist -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the long long long long long long book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the long long long long long long book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the long long long long long long book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the long long long long long long book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the long long long long long long book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+										<!-- Sample books -->
+										<div class="book">
+											<div class="icon">
+												<img src="../img/book_dark.png">
+											</div>
+											<div class="info">
+												<span class="title">Title of the book</span>
+												<span class="author">Author 1, Author 2</span>
+											</div>
+										</div>
+			
+									</div>
+									<div class="actions">
+										<button class="main-btn btn" id="add-to-wishlist">Add a book</button>
+									</div>
+								</div>
+							</div>
+						</div>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="" id="main-group-comments-holder"></div>
 	</div>
 
-	<!-- GROUP WALL -->
-	<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-		<section>
-			<div class="comment-area">
-				<div class="comment-form">
-					<div class="textarea-container">
-						<textarea id="comment--textarea" placeholder="Write a comment..."></textarea>
-						<div class="error-area" id="comment--error-area"></div>
-					</div>
-					<div class="actions-container">
-						<button type="button" class="btn main-btn" id="comment--submit">Post</button>
-					</div>
-				</div>
-				<!--  -->
-			</div>
+	<!-- GROUP BOOKS-->
+	<div class="col-xs-12 col-sm-4 club-side-content">
+		<div class="" id="side-tab-panel-holder"></div>
 
-			<div class="main-group--threads" id="main-group--threads">
-				<!-- Here be the past threads -->
-				
-			</div>
-		</section>
+		<div class="" id="side-members-holder"></div>
+		<!-- Here everything related to books (reading/wishlist/read)-->
+		<!-- Tab panel -->
+		
+		<!-- <div style="width: 100%;height: 100%;background-color: green;"></div> -->
+		<!-- Also member can be here -->
 	</div>
 
 </div>
@@ -427,15 +758,216 @@ function showEditable(name, description) {
 	//create a cancel button
 }
 
+function resizeTx(el) {
+	const max = 300; //calculate using the viewport
+	// max height = Math.max(document.documentElement.clientHeight, window.innerHeight) || 400px`
+	el.style.height = 'auto';
+	el.style.height = (el.scrollHeight > max ? max : el.scrollHeight) + 'px';
+}
+
+function onInput() {
+	resizeTx(this);
+}
+
+var croppable = null;
+
+function cancelIconChange() {
+	return function() {
+		croppable = null;
+		$('#club-icon').css('display', 'flex');
+		$('#croppable-wrapper').empty().append($('<div></div>', {class: 'croppable', id: 'croppable'}));
+		$('#icon-controls').empty();
+	}
+}
+
 $(document).ready(function() {
+	// arialize the elements
+	/*
+	Using the roving tabindex technique we try to assign focus to ech element by:
+	1. apply focus to the new element
+	2. update the tabindex of the focused element to "0", and
+	3. update the tabindex of the previously focused element to "-1".
+	*/
+	document.querySelectorAll('.aria-navigable-list').forEach(function (ariaList, index, args) {
+		//aria
+		ariaList.addEventListener('focus', function(event) {
+			// move focus to first element
+			console.log('aria list got focus');
+			if (ariaList.hasChildNodes()) {
+				// focus on first element
+				ariaList.firstElementChild.focus();
+				ariaList.firstElementChild.tabindex = '0';
+				ariaList.tabindex = '-1';
+			}
+		});
+		ariaList.addEventListener('keydown', function(event) {
+			// move to next element
+			console.log('keywodn on navigable list');
+			console.log(event.target);
+			var key = event.keyCode;
+			if (key === 37 || key === 38) {
+				// 37: left; 38: up; Move to previous
+				var prev = event.target.previousElementSibling;
+				console.log('moving to:' , prev);
+				if (prev) {
+					prev.focus();
+					prev.tabindex = '0';
+					event.target.tabindex = '-1';
+				}
+			}
+			if (key === 39 || key === 40) {
+				// 39 rifht; 40: down; Move to next
+				var next = event.target.nextElementSibling;
+				console.log('moving to: ', next);
+				if (next) {
+					next.focus();
+					next.tabindex = '0';
+					event.target.tabindex = '-1';
+				}
+			}
+		});
+	});
+
+	// Move the tabs if visible and resize handler
+	var resizing = function() {
+		console.log('resizing view to width: ', window.innerWidth);
+		var isVisible = function(el) {
+			// return (el.offsetWidth > 0 && el.offsetHEight > 0);
+			return 'block' === window.getComputedStyle(el).getPropertyValue('display');
+		};
+		// if(isVisible($('#mobile-reorder-nav')[0])) {
+		if(window.innerWidth < 768) {
+			console.log('visible: resizing into mobile nav');
+			$('#tab-members-holder').append($("#members-component"));
+			$('#tab-comment-holder').append($('#comments-component'));
+			$('#tab-books-holder').append($('#books-component'));
+		} else {
+			console.log('invisble: moving to side-panel');
+			$('#side-tab-panel-holder').append($('#books-component'));
+			console.log('moving comments component')
+			$('#main-group-comments-holder').append($('#comments-component'));
+			$('#side-members-holder').append($('#members-component'))
+		}
+	};
+
+	resizing();
+	window.addEventListener('resize', function() {
+		console.log('triggering resize:');
+		resizing();
+	});
 	$('#edit-icon').one('click', function() {
 		console.log('editable now');
 		showEditable('Editable name', 'Editable description\nOver multiple\nLines');
 	});
 
-	$('.more-toggle').on('click', function() {
-		$(this).siblings().toggleClass("more");
-		$(this).toggleClass("expanded");
+	$('#edit-club-icon').on('click', function() {
+		// make it editable // do here the change
+	});
+
+	$('#change-icon').change(function() {
+		//
+		if(croppable === null) {
+			croppable = $('.croppable').croppie({
+				enableExif: true,
+				viewport: {
+					width: 180,
+					height: 180,
+					type: 'circle'
+				},
+				boundary: {
+					width: 200,
+					height: 200
+				}
+			});
+			var saveButton = $('<button></button>', {class: 'btn main-btn'}).append('Save');
+			var cancelButton = $('<button></button>', {class: 'btn cancel-btn'}).append('Cancel').on('click', cancelIconChange());
+			$('#icon-controls').append(cancelButton).append(saveButton);
+		}
+		$('#club-icon').css('display', 'none');
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			croppable.croppie('bind', {
+				url: e.target.result
+			}).then(function() {
+				console.log('bind complete');
+			});
+		};
+		reader.readAsDataURL(this.files[0]);
+	});
+
+	$('#edit-club-display-name').on('click', function() {
+		// make it into editable with save/cancle buttons
+		// debugger;
+		$('.editing').removeClass('editing');
+		$('#editable-display-name--input').val($('#editable-display-name--value')[0].childNodes[0].wholeText.trim());
+		$(this).closest('.editable').addClass('editing');
+		var controls = $(this).closest('.editable').find('.actions');
+		controls.find('.cancel').on('click', function() {
+			$(this).closest('.editable').removeClass('editing');
+		});
+		controls.find('.save').on('click', function() {
+			// call the ajax to save the value and place the new value
+			var val = $(this).closest('.editable').find('input').val();
+			$('#editable-display-name .value')[0].childNodes[0].replaceWith(document.createTextNode(val));
+			$(this).closest('.editable').removeClass('editing');
+		});
+		$('#editable-display-name--input').focus();
+	});
+
+	$('#edit-club-description').on('click', function() {
+		// make it editable
+		$('.editing').removeClass('editing');
+		$(this).closest('.description').addClass('editing');
+		var controls = $(this).closest('.description').find('.actions');
+		controls.find('.cancel').on('click', function() {
+			$(this).closest('.description').removeClass('editing');
+		});
+		controls.find('.save').on('click', function() {
+			//
+			$(this).closest('.description').removeClass('editing');
+		});
+		resizeTx($('#editable-description--input')[0]);
+	});
+
+	var editableTx = document.getElementById('editable-description--input');
+	editableTx.addEventListener('input', onInput, false);
+
+	$('.expandable-toggle').on('click', function() {
+		$(this).closest('.expandable').children().toggleClass('not-expanded');
+	});
+
+	$('#add-to-wishlist').on('click', function () {
+		// show modal: 
+		$('#add-to-wishlist--dialog').modal('show');
+		$('#add-to-wislist--filter').focus();
+	});
+
+	$('.group-wishlist .book').on('click', function () {
+		//
+		console.log($(this));
+		$('#selected-book').empty();
+		//
+		var icon = $('<div></div>', {class: 'icon'}).append($('<img>', {src: '../img/book_clear.png'}));
+		var info = $('<div></div>', {class: 'info'}).html('<a href="#" class="title">Title of the selected book</a><span class="author"><a href="#">Author 1</a></span>');
+		var book = $('<div></div>', {class: 'book'}).append(icon).append(info);
+		var button = $('<button></button>', {class: 'btn main-btn'}).append('Move to reading').on('click', function () {console.log('book has been clicked')});
+		var actions = $('<div></div>', {class: 'actions'}).append(button);
+		$('#selected-book').append(book).append(actions);
+		/*
+<!-- <div class="book">
+											<div class="icon">
+												<img src="../img/book_clear.png">
+											</div>
+											<div class="info">
+												<a href="#" class="title">Title of the selected book</a>
+												<span class="author"><a href="#">Author 1</a>, <a href="#">Author 2</a></span>
+											</div>
+										</div>
+										<div class="actions">
+											<button class="btn main-btn">Move to reading</button>
+										</div> -->
+		*/
+		$('#selected-book').append();
 	});
 });
 </script>

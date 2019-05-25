@@ -4,89 +4,168 @@
 	display: none;
 }
 
+.mobile-nav {
+  .nav-tabs.underline-tabs {
+    justify-content: space-around;
+  }
+}
+
+.wishlist-dialog {
+  .body {
+    .filter {
+      margin-bottom: 10px;
+      .instructions {
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .to-add-list {
+      margin-top: -10px;
+      max-height: 450px;
+      overflow-y: auto;
+    }
+  }
+}
+
 .main-group {
 	display: flex;
   justify-content: flex-start;
   margin-bottom: 20px;
   flex-wrap: wrap;
 
-  .info {
-    text-align: center;
-  }
-
-  .horizontal {
-    flex-direction: row;
+  .group {
     display: flex;
     width: 100%;
 
-    .info {
-      margin-top: 20px;
+    @media @phone {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .icon-section {
+    align-items: flex-start;
+    margin: 20px;
+    .croppable-img {
+      height: 200px;
     }
 
-    .left {
-      justify-content: center;
+    .croppable-wrapper {
+      max-height: 240px;
     }
 
-    .right {
-      margin-left: 15px;
-      margin-top: 10px;
-      width: 100%;
-
-      .description {
-        margin-top: 15px;
-
-        // More means is collapsed
-        .content.more {
-          max-height: 80px;
-          overflow: hidden;
-        }
-
-        .more-toggle.expanded {
-          .more {
-            display: none;
-          }
-        }
-        .more-toggle:not(.expanded) {
-          .less {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .icon {
-      margin-top: 10px;
-
-      img {
-
-      }
-    }
-
-    .actions {
-      margin-top: 12px;
+    .icon-controls {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
     }
-  }
 
-  .vertical {
-    flex-direction: column;
-    justify-content: center;
-
-    .info {
-      justify-content: center;
+    .club-icon {
+      display: flex;
     }
-  }
 
-  .icon {
-    //
+    .edit-control {
+      position: relative;
+      margin-left: -34px;
+      margin-top: 6px;
+
+      .action {
+        color: @prologes-action-default;
+        background-color: #fff;
+        // opacity: 0.8;
+        border-radius: 50%;
+        font-size: 18px;
+        padding: 4px;
+        font-size: 18px;
+
+        label {
+          margin: 0px;
+          cursor: pointer;
+        }
+
+        input {
+          display: none;
+        }
+
+        &:focus, &:hover {
+          color: @prologes-action-hover;
+        }
+      }
+    }
   }
 
   .info {
+    margin-top: 20px;
+    width: 100%;
+
+    .editable {
+      display: flex;
+
+      .action {
+        margin-left: 5px;
+        vertical-align: 5px;
+        font-size: 20px;
+        color: @prologes-action-default;
+
+        &:focus, &:hover {
+          color: @prologes-action-hover;
+        }
+      }
+    }
+
     .display-name {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 26px;
+      font-weight: 500;
       color: @name-color;
+    }
+
+    .editing .value {
+      display: none;
+    }
+
+    .editing.text-editable {
+      display: flex;
+    }
+
+    .text-editable {
+      display: none;
+      flex-direction: column;
+      width: 98%;
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 10px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .field-editable {
+      display: none;
+      flex-direction: column;
+      width: 98%;
+
+      @media @phone {
+        margin-left: 8px;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 10px;
+        margin-top: 8px;
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .editing .field-editable {
+      display: flex;
     }
 
     .handle {
@@ -94,33 +173,69 @@
       color: @handler-color;
       font-size: 16px;
     }
+
+    .description.editing {
+      .expandable {
+        display: none;
+      }
+
+      .editable {
+        display: flex;
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+      margin-right: 20px;
+
+      @media @phone {
+        margin-left: 18px;
+      }
+
+      .editable-control {
+        position: relative;
+        text-align: right;
+        opacity: 0.8;
+        margin-top: -20px;
+        display: flex;
+        justify-content: flex-end;
+
+        & div {
+          color: @prologes-action-default;
+
+          &:hover, &:focus {
+            color: @prologes-action-hover;
+          }
+        }
+
+
+      }
+
+      .content {
+        font-size: 14px;
+        p {
+          text-align: justify;
+        }
+        *:last-child {
+          margin-bottom: 0px;
+        }
+      }
+
+      .content.not-expanded {
+        max-height: 80px;
+        overflow: hidden;
+      }
+
+      .controls {
+        margin-top: 13px;
+        color: @link-color;
+        cursor: pointer;
+        p {
+          text-align: center;
+        }
+      }
+    }
   }
-
-	.info-panel {
-		margin-left: 20px;
-		margin-top: 10px;
-
-		.title {
-			font-size: 32px;
-			font-weight: 600;
-		}
-
-		.handle {
-			margin-top: 10px;
-			color: @handler-color;
-			font-size: 22px;
-		}
-
-		.description {
-			margin-top: 10px;
-			font-size: 16px;
-
-			textarea {
-				height: 130px;
-				line-height: 2em;
-			}
-		}
-	}
 
 	.icon-panel {
 		display: flex;
@@ -146,31 +261,32 @@
 
 	.icon {
 		display: flex;
-		justify-content: center;
+    justify-content: center;
+    width: 100%;
 
-		.edit-button {
-			z-index: 2;
-			position: absolute;
-			right: 8px;
-			top: 10px;
-			margin: auto;
-			background-color: #3fb0ac;
-			border-radius: 50%;
-			width: 25px;
-			height: 25px;
+		// .edit-button {
+		// 	z-index: 2;
+		// 	position: absolute;
+		// 	right: 8px;
+		// 	top: 10px;
+		// 	margin: auto;
+		// 	background-color: #3fb0ac;
+		// 	border-radius: 50%;
+		// 	width: 25px;
+		// 	height: 25px;
 
-			.edit-icon {
-				color: #fff;
-				margin-top: 6px;
-				margin-left: 8px;
-			}
-		}
+		// 	.edit-icon {
+		// 		color: #fff;
+		// 		margin-top: 6px;
+		// 		margin-left: 8px;
+		// 	}
+		// }
 
 		.cancel-edit {
 			background-color: @prologes-error-red!important;
 		}
 
-		img {
+		.croppable-img {
 			width: 140px;
 			height: 140px;
 			border-radius: 50%;
@@ -214,60 +330,108 @@
 	}
 }
 
-.group-member {
-	display: flex;
-	justify-content: flex-start;
-	margin-top: 5px;
+.members {
+  .section-header {
+    text-align: center;
+    font-weight: 600;
+    color: @title-color;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 
-	.info {
-		display: flex;
-		flex-direction: column;
-		margin-left: 8px;
-		margin-top: 8px;
-		overflow: hidden;
-		white-space: nowrap;
+  .actions {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-		.display-name {
+  .membership {
+    .guest {
+      .actions {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .member {
+      display: flex;
+      justify-content: space-between;
+      .actions {
+        //
+      }
+      .role {
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
 
-			a {
-				color: @name-color;
-				font-weight: 600;
+.club-members {
+  margin-left: 10px;
 
-				div {
-					overflow: hidden;
-					text-overflow: ellipsis;
-				}
-			}
-		}
+  @media @tablet {
+    margin-left: 0;
+  }
 
-		.user-name {
+  .member {
+    &:hover {
+      background-color:#fff;
+    }
+    padding: 3px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2px;
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 8px;
+      margin-top: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      .display-name {
+        font-size: 14px;
+        a {
+          color: @name-color;
+          font-weight: 500;
+          div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .username {
+        a {
+          color: @handler-color;
+          font-size: 12px;
+          div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
 
-			a {
-			 color: @handler-color;
-			 font-size: 12px;
-			 overflow: hidden;
-			 text-overflow: ellipsis;
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
 
-				div {
-					overflow: hidden;
-					text-overflow: ellipsis;
-				}
-			}
-		}
-	}
-
-	div.icon {
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-	}
-
-	img.icon {
-		border-radius: 50%;
-		width: 48px;
-		height: 48px;
-	}
+.side-tab-panel {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .group-reading {
@@ -285,11 +449,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     margin-right: 8px;
     margin-left: 8px;
+
+    .title {
+      margin-top: 10px;
+      margin-bottom: 8px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .author {
+      font-size: 16px;
+    }
   }
 
   .icon {
+    padding-top: 16px;
+    padding-bottom: 12px;
 
     img {
       height: 150px;
@@ -304,22 +481,30 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
   }
 
   .section-name {
-    margin-top: 8px;
-    margin-left: 12px;
+    // margin-top: 8px;
+    // margin-left: 12px;
+    padding-top: 8px;
+    text-align: center;
     font-size: 16px;
   }
 
   .selected-book {
     .book {
+
+      text-align: center;
       display: flex;
       flex-direction: column;
       margin-left: 8px;
       margin-right: 8px;
 
       .info {
+        display: flex;
+        flex-direction: column;
+
         .title {
           text-decoration: none;
           font-size: 16px;
@@ -339,6 +524,8 @@
       }
 
       .icon {
+        margin-top: 7px;
+        margin-bottom: 7px;
 
         img {
           height: 80px;
@@ -349,11 +536,25 @@
 
   .list {
     margin-top: 8px;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+    max-height: 420px;
+    overflow-y: auto;
+
+    .book:first-child {
+      border-top: 0;
+    }
+    
     .selected {
       background-color: #e4e4e4;
     }
     //
     .book {
+
+      &:hover, &:active {
+        background-color: @custom-panel-bg-hover;
+      }
+      cursor: pointer;
       display: flex;
       border-top: 1px solid #e4e4e4;
 
@@ -381,6 +582,19 @@
           margin-right: 0;
         }
       }
+    }
+  }
+}
+
+.club-side-content.col-sm-4 {
+  @media @tablet {
+    padding: 0;
+  }
+
+  .side-tab-panel {
+    @media @tablet {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }
