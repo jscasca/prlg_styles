@@ -1,0 +1,361 @@
+
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <!-- STYLES -->
+  <!-- Prologes styles -->
+  <link rel='stylesheet/less' href='../css/styles.less'>
+  <!-- Croppies CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css">
+  <!-- Boostrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- JAVASCRIPT -->
+  <!-- Jquery Slim: Bs required and functionality -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- Popper: pop ups in bootstrap -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+  <!-- Boostrap: Scaffolding -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Croppie: Image cropping -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
+  <!-- Less: Styling -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+  <!-- Font awesome icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Prologes fav-icon -->
+  <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  </head>
+  <body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav role="navigation" class="navbar navbar-custom navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand-image"><img src="../img/prologes.png" class="navlogo logo"/></a>
+      </div>
+      <!-- Collection of nav links, forms, and other content for toggling -->
+      <div id="navbarCollapse" class="collapse navbar-collapse">
+          
+          <ul class="nav navbar-nav navbar-right">
+      <li class='dropdown'>
+        <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+          <div class='lang-selector'>
+            EN				</div>
+        </a>
+        <ul role='menu' class='dropdown-menu'>
+          <li>
+            <a href="#">English</a>
+            </li>
+          <li>
+            <a href="#">Español</a>
+            </li>
+        </ul>
+      </li>
+  
+      <li>
+        <form role="search" class="navbar-form navbar-right" action="/prologes/search">
+            <div class="input-group">
+              <input type="text" placeholder="Search" name="q" class="form-control input-sm">
+              <span class="input-group-btn">
+                <button class="btn btn-default input-sm" type="submit">
+                  <span class="fas fa-search"></span>
+                </button>
+              </span>
+            </div>
+        </form>
+      </li>
+          
+              <!-- NOT LOGGED IN -->
+              <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <div class="user-header">
+                      <div class="user-profile-pic">
+                        <!--<img src="img/defaultUser.png" class="" />-->
+                      </div>
+                      <div class="user-display-name">username</div>
+                    </div>
+                    <!--<img src="img/defaultUser.png" class="profile-pic" />!-->
+                    <!--Tin Kalzetin-->
+                  </a>
+                  <ul role="menu" class="dropdown-menu">
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Library</a></li>
+                      <li><a href="#">Book clubs</a></li>
+                      <li><a href="#">Log out</a></li>
+                  </ul>
+                </li>	
+      <!-- LOGGED IN -->
+              </ul>
+      </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- MAIN BODY -->
+  <div class="container">
+    <!-- This is the MODAL stuff -->
+    <div class="col-sm-12">
+      <div class="modal fade wishlist-dialog" id="add-to-wishlist--dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="header">
+              <!--  -->
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 class="title"><span id="modal-title-placeholder">Add a book to the club wishlist</span></h3>
+            </div>
+            <div class="body">
+              <div class="filter">
+                <div class='instructions'>
+                  <span>Select a book from your readings to add it to the club wishlist.</span>
+                </div>
+                <div class='filter-textfield'>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="add-to-wislist--filter">
+                    <span class="input-group-addon">
+                      <i class="fas fa-filter"></i>
+                    </span>
+                  </div>
+                  <!-- <input type='text' id='suggest-similar--filter' class='filter-textfield' placeholder='Filter'/> -->
+                </div>
+              </div>
+              <div class="to-add-list default-book-list dialog aria-navigable-list" tabindex="0">
+                <!-- Here list the books -->
+                <!-- Sample result -->
+                <div class="book prlg-panel" tabindex="-1">
+                    <div class="icon"><img src="../img/user_dark.png"></div>
+                    <div class="info">
+                      <div class="title">
+                        Book Title
+                      </div>
+                      <div class="author">
+                        Author One, Author Two
+                      </div>
+                    </div>
+                  </div>
+                <!-- End Sample -->
+                <!-- Sample result -->
+                  <div class="book prlg-panel" tabindex="-1">
+                      <div class="icon"><img src="../img/user_dark.png"></div>
+                      <div class="info">
+                        <div class="title">
+                          A book with a longer title
+                        </div>
+                        <div class="author">
+                          Author One, Author Two
+                        </div>
+                      </div>
+                    </div>
+                  <!-- End Sample -->
+                <!-- Sample result -->
+                  <div class="book prlg-panel" tabindex="-1">
+                      <div class="icon"><img src="../img/user_clear.png"></div>
+                      <div class="info">
+                        <div class="title">
+                          A Book With An Extra Extra EXTRA Long Title
+                        </div>
+                        <div class="author">
+                          Author One, Author Two
+                        </div>
+                      </div>
+                    </div>
+                  <!-- End Sample -->
+                <!-- Sample result -->
+                  <div class="book prlg-panel" tabindex="-1">
+                      <div class="icon"><img src="../img/user_clear.png"></div>
+                      <div class="info">
+                        <div class="title">
+                          The Book with the Longest Title that was ever written in the Stoy of Titles
+                        </div>
+                        <div class="author">
+                          Author One, Author Two
+                        </div>
+                      </div>
+                    </div>
+                  <!-- End Sample -->
+                <!-- Sample result -->
+                  <div class="book prlg-panel" tabindex="-1">
+                      <div class="icon"><img src="../img/user_dark.png"></div>
+                      <div class="info">
+                        <div class="title">
+                          Book Title
+                        </div>
+                        <div class="author">
+                          Author One, Author Two
+                        </div>
+                      </div>
+                    </div>
+                  <!-- End Sample -->
+                <!-- Sample result -->
+                  <div class="book prlg-panel" tabindex="-1">
+                      <div class="icon"><img src="../img/user_clear.png"></div>
+                      <div class="info">
+                        <div class="title">
+                          Book Title
+                        </div>
+                        <div class="author">
+                          Author One, Author Two
+                        </div>
+                      </div>
+                    </div>
+                  <!-- End Sample -->
+              </div>
+            </div>
+            <div class="mobile-nav" id="mobile-reorder-nav">
+              <ul class="nav nav-tabs underline-tabs">
+                <li><a href="#tab-members" data-toggle="tab">Members</a></li>
+                <li class="active"><a href="#tab-comments" data-toggle="tab">Comments</a></li>
+                <li><a href="#tab-books" data-toggle="tab">Books</a></li>
+              </ul>
+            </div>
+            <div class="footer">
+              <div class="actions">
+                  <button class="btn">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP PHONE HEADER -->
+    <div class="col-xs-12 col-sm-6">
+      <section class="my-bookclubs">
+        <div class="section-header">
+          <h3>My book clubs</h3>
+        </div>
+        <div class="bookclubs">
+          <!-- Sample club -->
+          <div class="bookclub prlg-panel" tabindex="0">
+            <div class="icon">
+              <img src="../img/user_dark.png">
+            </div>
+            <div class="info">
+              <div class="name">The club name</div>
+              <div class="handle">@theclubhandle</div>
+              <a href="#" tabindex="-1"></a>
+            </div>
+          </div>
+          <!-- End sample club -->
+          <!-- Sample club -->
+          <div class="bookclub prlg-panel" tabindex="0">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="name">The club name</div>
+                <div class="handle">@theclubhandle</div>
+                <a href="#" tabindex="-1"></a>
+              </div>
+            </div>
+            <!-- End sample club -->
+          <!-- Sample club -->
+          <div class="bookclub prlg-panel" tabindex="0">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="name">The club name</div>
+                <div class="handle">@theclubhandle</div>
+                <a href="#" tabindex="-1"></a>
+              </div>
+            </div>
+            <!-- End sample club -->
+          <!-- Sample club -->
+          <div class="bookclub prlg-panel" tabindex="0">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="name">The club name</div>
+                <div class="handle">@theclubhandle</div>
+                <a href="#" tabindex="-1"></a>
+              </div>
+            </div>
+            <!-- End sample club -->
+        </div>
+      </section>
+    </div>
+    <!-- GROUP HEADER-->
+    <div class="col-xs-12 col-sm-6">
+      <!-- Here hte group header and info-->
+
+      <section class="new-group">
+        <div class="icon">
+          <img src="../img/user_dark.png">
+        </div>
+        <div class="section-header">
+          <h3>Start your own club!</h3>
+        </div>
+        <div class="section-instructions">
+          <p>Select a unique name for your new club and start enjoying your new space!</p>
+          <p>Club names must start with a letter and can contain letter, numbers and/or underscores up to 25 characters</p>
+        </div>
+        <div class="new-form">
+          <form>
+            <div class="form-group">
+              <label class="" for="">Club name</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="fas fa-book-reader"></span>
+                </div>
+                <input id="group-name" type="text" class="form-control" placeholder="MyClubName">
+              </div>
+            </div>
+            <div class="error-area" id="error-msg"></div>
+            <div class="actions">
+              <button type="submit" class="btn main-btn">Create Club!</button>
+            </div>
+          </form>
+        </div>
+      </section>
+  
+      <div class="" id="main-group-comments-holder"></div>
+    </div>
+  
+  </div>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <h5>Prologes &copy; 2016 
+        <ul class="pull-right list-inline">
+          <li><a href="about">About us</a></li>
+          <li><a href="privacy">Terms and privacy</a></li>
+        </ul>
+      </h5>
+    </div>
+  </footer>
+  </body>
+  </html>
+  <script>
+  var club = {
+    displayName: 'The Club\'s Name',
+    description: 'A lengthy description\nThat may span multiple lines\nOr not...',
+    icon: '../img/user_clear.png'
+  };
+  
+  var croppable = null;
+  
+  function cancelIconChange() {
+    return function() {
+      croppable = null;
+      $('#club-icon').css('display', 'flex');
+      $('#croppable-wrapper').empty().append($('<div></div>', {class: 'croppable', id: 'croppable'}));
+      $('#icon-controls').empty();
+    }
+  }
+  
+  $(document).ready(function() {
+    // arialize the elements
+  });
+  </script>
