@@ -1,0 +1,55 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<!-- <html lang="es"> -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet/less' href='../css/styles.less'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/prologes/img/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- <?php
+	include("templates/__header.php");
+	//maybe just styless and favicon?
+	?> -->
+	<title>Forgot your password?</title>
+</head>
+<body class="body-background">
+  <div class="forgotten full-body">
+    <div class="centered-section opaque">
+      <div class="header">
+        <a href="#">
+          <img src="../img/prologes.png">
+        </a>
+      </div>
+      <div class="content">
+        <h2>Forgot your password?</h2>
+        <form class="Login-form" id="registration--form">
+          <p>Enter your username or email address to reset your password</p>
+          <div class="form-group">
+              <div class="input-group">
+                  <div class="input-group-addon"><span class="fa fa-user"></span></div>
+                  <input type="text" class="form-control" placeholder="Email or username" name="user" id="user">
+              </div>
+          </div>
+          <div id="error-msg"></div>
+          <button type="send" class="btn main-btn">Submit</button>
+          <!--<h6>O utiliza tus redes sociales</h6>
+          <div class="Login-buttonContainer">
+            <a href="<?php echo htmlspecialchars($loginUrl); ?>" class="btn Facebook-button">Facebook</a>
+            <a href="#" class="btn Google-button">Google</a>
+          </div>-->
+        </form>
+        <h5>Already have an account? <a href="#">Log in</a></h5>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
