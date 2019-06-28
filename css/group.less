@@ -1,223 +1,100 @@
 // Group section
+@import "styles.less";
+
+@tab-border-color: #DDDBDB;
 
 #main-group--editable {
 	display: none;
 }
 
-.main-group {
-	display: flex;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-
-  .info {
-    text-align: center;
-  }
-
-  .horizontal {
-    flex-direction: row;
-    display: flex;
-    width: 100%;
-
-    .info {
-      margin-top: 20px;
-    }
-
-    .left {
-      justify-content: center;
-    }
-
-    .right {
-      margin-left: 15px;
-      margin-top: 10px;
-      width: 100%;
-
-      .description {
-        margin-top: 15px;
-
-        // More means is collapsed
-        .content.more {
-          max-height: 80px;
-          overflow: hidden;
-        }
-
-        .more-toggle.expanded {
-          .more {
-            display: none;
-          }
-        }
-        .more-toggle:not(.expanded) {
-          .less {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .icon {
-      margin-top: 10px;
-
-      img {
-
-      }
-    }
-
-    .actions {
-      margin-top: 12px;
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  .vertical {
-    flex-direction: column;
-    justify-content: center;
-
-    .info {
-      justify-content: center;
-    }
-  }
-
-  .icon {
-    //
-  }
-
-  .info {
-    .display-name {
-      font-size: 20px;
-      font-weight: 600;
-      color: @name-color;
-    }
-
-    .handle {
-      margin-top: 10px;
-      color: @handler-color;
-      font-size: 16px;
-    }
-  }
-
-	.info-panel {
-		margin-left: 20px;
-		margin-top: 10px;
-
-		.title {
-			font-size: 32px;
-			font-weight: 600;
-		}
-
-		.handle {
-			margin-top: 10px;
-			color: @handler-color;
-			font-size: 22px;
-		}
-
-		.description {
-			margin-top: 10px;
-			font-size: 16px;
-
-			textarea {
-				height: 130px;
-				line-height: 2em;
-			}
-		}
+.profile-section {
+	background: white;
+	padding: 0px 10px 16px 10px;
+	border: 1px solid @tab-border-color;
+	max-width: 55%;
+	transform: translate(-35px);
+	
+	.edit-profile-image {
+		color: black;
+		text-decoration: none;
+		font-family: Raleway;
+		font-size: 10px;
+		transition: all 0.5s;
+		float: right;
+		
+		position: absolute;
+		top: 10px;
+		right: 10px;
 	}
-
-	.icon-panel {
-		display: flex;
-		flex-direction: column;
-		padding: 10 30 10 30;
-
-		.actions {
-			display: flex;
-
-			& > * {
-				margin-top: 8px;
-			}
-		}
-
-		.edit-club {
-			justify-content: space-around;
-		}
-
-		.change-icon {
-			justify-content: center;
-		}
+	
+		.edit-profile-image:hover {
+		z-index: 10000;
+		color: @contrasting-color;
+		transition: all .3s ease;
+		text-decoration: none;
 	}
-
-	.icon {
-		display: flex;
-		justify-content: center;
-
-		.edit-button {
-			z-index: 2;
-			position: absolute;
-			right: 8px;
-			top: 10px;
-			margin: auto;
-			background-color: #3fb0ac;
-			border-radius: 50%;
-			width: 25px;
-			height: 25px;
-
-			.edit-icon {
-				color: #fff;
-				margin-top: 6px;
-				margin-left: 8px;
-			}
-		}
-
-		.cancel-edit {
-			background-color: @prologes-error-red!important;
-		}
-
-		img {
-			width: 140px;
-			height: 140px;
-			border-radius: 50%;
-			margin-right: auto;
-			margin-left: auto;
-		}
+	
+	.edit-profile-dialog {
+		transform: translate(-10px);
+		background-color: rgba(255,255,255,0.75);
+		position: absolute;
+		top: 10%;
+		right: 5%;
+		border-radius: 2px;
+		transform: translate(0, -10%);
+		width: 90%;
+		height: 90%;
 	}
-
-	.group-membership {
-		display: flex;
-		justify-content: center;
-		margin-top: 20px;
+	
+			
+	.btn-btn-primary {
+		background: @contrasting-color;
+		margin-top: 90px;
+		border: none;
+		border-radius: 2px 2px 2px 2px;
+		box-shadow: 1px 1px 4px #888888;
+		font-family: Raleway;
 	}
-
-	.hover-button {
-		width: 75%;
+	
+	.profile-image-placeholder {
+		max-width: 100%;
+		padding: 60px 20px 30px 20px;
+	}
+	
+	.btn.join-btn {
+		background-color: @contrasting-color;
+		color: @main-button-text;
+		font-family: Raleway;
+		box-shadow: 1px 1px 4px #888888; 
 
 		&:focus,
 		&:hover {
-			background-color: @prologes-red;
-
-			.unfocused-text {
-				display: none;
-			}
-
-			.focused-text {
-				display: block;
-			}
+			background-color: @main-button-hover;
+			color: @main-button-text;
 		}
+}
+}
 
-		.unfocused-text {
-			color: black;
-			display: block;
-		}
 
-		.focused-text {
-			color: white;
-			display: none;
-		}
+.members-section {
+	max-width: 75%;
+	padding-top: 40px;
+}
 
-	}
+.member-title {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	font-family: Lora;
 }
 
 .group-member {
 	display: flex;
 	justify-content: flex-start;
 	margin-top: 5px;
+	font-family: Raleway;
+	font-size: 12px;
+
 
 	.info {
 		display: flex;
@@ -243,7 +120,7 @@
 		.user-name {
 
 			a {
-			 color: @handler-color;
+			 color: 	@handler-color;
 			 font-size: 12px;
 			 overflow: hidden;
 			 text-overflow: ellipsis;
@@ -267,34 +144,326 @@
 		border-radius: 50%;
 		width: 48px;
 		height: 48px;
+		border: 1px solid #DDDBDB;
 	}
 }
 
-.group-reading {
-  //
+.club-description-section {
+	
+		.title {
+			font-size: 40px;
+			font-weight: 300;
+			font-family: Lora;
+			width: 100%;
+			padding-left: 5px;
+		}
 
-  padding-bottom: 10px;
+		.handle {
+			color: @handler-color;
+			font-size: 18px;
+			font-family: Raleway;
+			padding-left: 5px;
+		}
 
-  .actions {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+		.description {
+			margin-top: 10px;
+			font-size: 14px;
+			font-family: Raleway;
+			width: 100%;
+			padding-left: 5px;
+		}
+	
+	.inline-editable {
+		background: @tab-border-color;
+		max-height: 55px;
+		max-width: 500px;
+		border: none;
+		resize: none !important;
+		overflow: hidden !important;
+		border-radius: 3px; 
+		
+	}
+	
+	.inline-editable:disabled {
+		background: transparent !important;
+	}
+	
+	.inline-editable:focus {
+		outline: none !important;
+   	 	border-bottom:4px solid @contrasting-color;
+	}
+	
+	.edit-button {
+		background: transparent;
+    	border: none;
+    	cursor: pointer;
+		position: absolute;
+      	top: 40%;
+	}
+}
+
+	.save-btn {
+		border: none;
+		background: transparent !important;
+		color: @contrasting-color;
+		padding-bottom: 50px;
+		position: relative;
+		left: 10px;
+	}
+	
+	.cancel-btn {
+		border: none;
+		background: transparent !important;
+		padding-bottom: 50px;
+	}
+
+.comment-section {
+	max-width: 90%;
+	padding-top: 80px;
+}
+
+.actions {
+	  margin-top: 10px;
+	  display: flex;
+	  justify-content: center;
+	  font-family: Raleway;
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 8px;
-    margin-left: 8px;
-  }
+.actions-container {
+	margin-bottom: -5px;
+}
 
-  .icon {
+.side-tab-panel {
+	max-width: 85%;
+	font-family: Raleway;
+	padding-right: 20px;
+	
+	.nav-tabs > li > a {
+		background-color: @tab-border-color;
+		color: black !important;
+	}
+}
 
-    img {
-      height: 150px;
-    }
+.wishlist-panel {
+	background: white;
+	max-height: auto;
+	max-width: 250px;
+	border-left: 1px solid @tab-border-color;
+	border-right: 1px solid @tab-border-color;
+	border-bottom: 1px solid @tab-border-color;
+	border-top: 1px solid @tab-border-color;
+	
+	.wishlist-content {
+		padding: 10px;
+		position: relative;
+	}
+	
+	.dropdown {
+		position: absolute;
+		cursor: pointer;
+		left: 60px;
+		colour: black !important;
+		transition: all 0.5s;
+		top: 12px;
+		
+	}
+	
+	.dropdown:hover {
+		z-index: 10000;
+		color: @contrasting-color;
+		transition: all .3s ease;
+		text-decoration: none;
+	}
+	
+	.title-wishlist {
+		font-family: Lora;
+		font-size: 22px;
+		padding-top: 50px;
+		margin-bottom: 60px;
+		align-content: center;
+	}
+	
+	.wishlist-image {
+		position: relative;
+		width: 30%;
+		padding: 20px 5px 10px 5px;
+		border: 1px solid @tab-border-color;
+		
+	}
+	
+  	.wishlist-info {
+		font-family: Raleway;
+		font-size: 14px;
+		padding-left: 10px;
+		white-space: pre-line;
+		display: inline-block;
+		vertical-align: middle;
+		
+		a {
+			color: @contrasting-color;
+		}
   }
+}
+
+.reading-panel {
+	background: white;
+	max-height: auto;
+	border-left: 1px solid @tab-border-color;
+	border-right: 1px solid @tab-border-color;
+	border-bottom: 1px solid @tab-border-color;
+
+	.title-reading {
+		font-family: Lora;
+		font-size: 22px;
+		padding-top: 50px;
+		margin-bottom: 60px;
+	}
+
+  	.info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 8px;
+		margin-left: 8px;
+	
+		font-family: Raleway;
+		font-size: 14px;
+		padding-top: 40px;
+		padding-bottom: 60px;
+		
+		a {
+			color: @contrasting-color;
+		}
+  }
+	
+	.edit-reading-image {
+		color: black;
+		text-decoration: none;
+		font-family: Raleway;
+		font-size: 10px;
+		transition: all 0.5s;
+		float: right;
+		position: absolute;
+		top: 160px;
+		right: 120px;
+	}
+	
+	.edit-reading-image:hover {
+		z-index: 10000;
+		color: @contrasting-color;
+		transition: all .3s ease;
+		text-decoration: none;
+	}
+	
+	.edit-reading-dialog {
+		transform: translate(-10px);
+		background-color: rgba(255,255,255,0.75);
+		position: absolute;
+		top: 10%;
+		right: 5%;
+		border-radius: 2px;
+		transform: translate(0, -10%);
+		width: 90%;
+		height: 90%;
+	}
+	
+	.edit-nextup-image {
+		color: black !important;
+		text-decoration: none;
+		margin-top: 10px;
+		font-family: Raleway;
+		font-size: 10px;
+		transition: all 0.5s;
+		float: right;
+		position: absolute;
+		top: 150px;
+		left: 148px;
+	}
+	
+	.nextup-pic:hover {
+    
+    z-index: 10000;
+    color: black;
+    transition: all .3s ease;
+    text-decoration: none;
+} 
+	
+	.reading-placeholder-image {
+		max-width: 60%;
+		border: solid 1px @tab-border-color;
+		padding: 45px 20px 20px 20px;
+		margin-top: 30px;
+	}
+	
+	.nextup-placeholder-image {
+		max-width: 60%;
+		border: solid 1px @tab-border-color;
+		padding: 45px 20px 20px 20px;	
+		margin-top: 30px;
+	}
+	
+	.panel-title {
+		text-decoration: none;
+		font-family: Raleway;
+		font-size: 10px;
+		color: black;
+		position: absolute;
+  		bottom: 0;
+		padding-bottom: 10px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+	}
+	
+	.panel-group > a {
+		float: right;
+	}
+
+	.book {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	
+	.book > a {
+		font-family: Raleway;
+		font-size: 12px;
+		color: @contrasting-color;
+	}
+	
+	.book > img {
+		max-width: 55%;
+		border: 1px solid @tab-border-color;
+		padding: 40px 15px 40px 15px;
+		margin-bottom: 40px;
+	}
+	
+	.book > span {
+		font-family: Raleway;
+		font-size: 12px;
+	}
+	
+	.panel-heading  a:before {
+   		font-family: "Material Icons";
+   		content: "\e313"; //Weird number is from here: https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+   		float: right;
+   		transition: all 0.5s;
+	}
+	
+	.panel-heading.active a:before {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		transform: rotate(180deg);
+	} 
+}
+
+.comment-area {
+	font-family: Raleway;
+}
+
+.actions-container {
+	position: relative;
+  	right: 15px;
+	font-family: Raleway;
 }
 
 .group-wishlist {
@@ -347,9 +516,10 @@
     }
   }
 
-  .list {
+  .what_else_list {
     margin-top: 8px;
-    .selected {
+    
+	  .selected {
       background-color: #e4e4e4;
     }
     //
@@ -374,13 +544,17 @@
       }
 
       .icon {
-
-        img {
-          height: 50px;
-          margin: 2px;
-          margin-right: 0;
+		width: 100%;
+		height:auto;
+        margin: 2px;
+        margin-right: 0;
         }
       }
     }
   }
+
+.footer {
+	padding-top: 70px;
+	
 }
+

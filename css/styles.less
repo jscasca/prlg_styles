@@ -1,8 +1,7 @@
-
 @main-text-color:'';
 
 @main-color: #173e43;
-@contrasting-color: #3fb0ac;
+@contrasting-color: #59A09C;
 @light-color: #fae596;
 
 @main-button-color: @contrasting-color;
@@ -12,10 +11,10 @@
 
 @prologes-icon-color: #173e43;
 @prologes-icon-hover: #fae596;
-@prologes-icon-active: #3fb0ac;
+@prologes-icon-active: #59A09C;
 @prologes-icon-disabled: #e7e7e7;
 
-@prologes-nav-background: #3fb0ac;
+@prologes-nav-background: #59A09C;
 @prologes-nav-color: #ffffff;
 @prologes-nav-border: #e7e7e7;
 
@@ -38,7 +37,6 @@
 @phone: ~"(max-width:767px)";
 
 @import "comments.less";
-@import "group.less";
 @import "book.less";
 @import "author.less";
 @import "profile.less";
@@ -179,54 +177,45 @@ body {
 		color: @prologes-nav-color;
 		border-color: @prologes-nav-border;
 		border-radius: 0 !important;
+		position: relative;
+		max-height: 40px;
+		box-shadow: 1px 1px 2px #888888;
 
-		.logo {	
-    	max-height: 35px;
-			float: left;
-			padding-left: 2px;
-			margin-top: -7px;
-		// img.logo {
-		// 	height: 4em;
-		// }
+		.logo {
+    		max-height: 35px;
+			margin: 0;
+  			position: absolute;
+  			top: 50%;
+  			-ms-transform: translateY(-50%);
+  			transform: translateY(-50%);
+		}
 		
 		.navbar-nav {
 			list-style-type: none;
 			padding-right: 13px; 
+			cursor: pointer;
+		}
+		
+		.navbar-nav > li > a {
+ 			line-height: 50px;
+			width: 100%;
+			max-height: 80%
+  			
+		}
+		
+		.dropdown-content a:hover {
+			background-color: @contrasting-color;
+		}
+		
+		i.icon-black {
+    		color: black;
+			padding-left: 6px;
+      		padding-right: 6px;
+			padding-top: 16px;
 		}
 	}
 
 // Container is the main body
-
-.bookshelf-image {	
-	max-width: 90%;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-	padding-top: 70px;
-}
-
-.row h1 {
-	font-family: Lora;
-	font-size: 70px;
-	text-align: center;
-	margin-left: auto;
-    margin-right: auto;
-	padding-top: 10px;
-}
-
-.row p {
-	font-family: Raleway;
-	font-size: 14px;
-	text-align: center;
-	margin-left: auto;
-    margin-right: auto;
-	max-width: 500px;
-	padding-bottom: 20px;
-}
-
-.index-search {
-	padding-bottom: 120px;
-}
 
 // Components
 .btn.main-btn {
@@ -279,17 +268,6 @@ body {
 	}
 }
 
-.btn.submit-btn {
-	background-color: @main-button-color;
-	color: @main-button-text;
-
-	&:focus,
-	&:hover {
-		background-color: @main-button-hover;
-		color: @main-button-text;
-	}
-}
-
 .title {
 	color: @title-color;
 
@@ -338,9 +316,10 @@ body {
 
     .info {
       margin-left: 10px;
+		
       .title {
-				min-width: 120px;
-				max-width: 480px;
+		min-width: 120px;
+		max-width: 480px;
         font-size: 14px;
         font-weight: 500;
         margin-top: 10px;
