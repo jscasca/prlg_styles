@@ -182,9 +182,21 @@
       .editable {
         display: flex;
       }
+
+      .empty {
+        display: none;
+      }
     }
 
     .description.empty .expandable {
+      display: none;
+    }
+
+    .description.empty .empty {
+      display: block;
+    }
+
+    .description.empty.editing .empty {
       display: none;
     }
 
@@ -197,6 +209,7 @@
       }
 
       .empty {
+        display: none;
         padding: 10px;
         padding-top: 0;
         margin-bottom: 10px;
@@ -521,8 +534,17 @@
   }
 }
 
+.group-reading.empty {
+  .icon { display: none; }
+  .info { display: none; }
+  .actions { display: none; }
+  .section-name {display: none; }
+  .background { display: flex; }
+}
+
 .group-reading {
   //
+  .background { display: none; }
 
   padding-bottom: 10px;
 
@@ -530,6 +552,14 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
+  }
+
+  .section-name {
+    // margin-top: 8px;
+    // margin-left: 12px;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 16px;
   }
 
   .info {
@@ -561,8 +591,32 @@
   }
 }
 
+.group-wishlist.empty {
+  .background {
+    display: flex;
+    .actions {
+      display: flex;
+    }
+  }
+  .actions {
+    display: none;
+  }
+  .section-name {
+    display: none;
+  }
+  .selected-book {
+    display: none;
+  }
+  .list {
+    display: none;
+  }
+}
+
 .group-wishlist {
   //
+  .background {
+    display: none;
+  }
 
   .actions {
     margin-top: 10px;
