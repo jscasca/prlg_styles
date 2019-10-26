@@ -151,17 +151,17 @@
           </div>
           
           <div class="actions">
+              <!-- PROLOGUE-->
+              <div class="action" id="action-prologe" tabindex="0" role="button" title="Write a prologue">
+                <span class="fas fa-pen-nib"></span>
+              </div>
             <!-- WISHLIST-->
             <div class="action" tabindex="0" role="button" title="Add to wishlist">
-              <span class="fas fa-book"></span>
+              <span class="fas fa-list-alt"></span>
             </div>
             <!-- FAVOURITE-->
             <div class="action active" tabindex="0" role="button" title="Add to favorites">
               <span class="fas fa-heart"></span>
-            </div>
-            <!-- PROLOGUE-->
-            <div class="action" id="action-prologe" tabindex="0" role="button" title="Write a prologue">
-              <span class="fas fa-pen-nib"></span>
             </div>
             <!-- READING-->
             <div class="action  disabled" tabindex="0" role="button" title="Add to readings">
@@ -468,6 +468,148 @@
         
 
       </div>
+
+      <!-- Recommended, Adds and selling points -->
+      <div class="col-md-4 col-sm-12 main-book--sidebar" id="main-book--sidebar">
+        <!-- Where to buy -->
+        <div class="prlg-panel toggable open" id="bookstore-links">
+          <div class="toggable-header" id="toggle-catalogue">
+            <span>Buy this book!</span>
+            <span class="fas fa-caret-down on-closed"></span>
+            <span class="fas fa-caret-up on-open"></span>
+          </div>
+          <div class="bookstore-catalogue on-open">
+            <!-- Item example -->
+            <a class="item">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="title">Book name</div>
+                <div class="price">$19.99</div>
+                <div class="provider">
+                  <img src="../img/book_depository.png">
+                </div>
+              </div>
+            </a>
+            <!-- Item example -->
+            <a class="item">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="title">The Lord of the Rings: The fellowship of the Ring</div>
+                <div class="price">$19.99</div>
+                <div class="provider">
+                  <img src="../img/book_depository.png">
+                </div>
+              </div>
+            </a>
+            <!-- Item example -->
+            <a class="item">
+              <div class="icon">
+                <img src="../img/user_dark.png">
+              </div>
+              <div class="info">
+                <div class="title">Long long book name with a long title</div>
+                <div class="price">$19.99</div>
+                <div class="provider">
+                  <img src="../img/book_depository.png">
+                </div>
+              </div>
+            </a>
+            <!-- Sample End -->
+            <!-- Item example -->
+            <a class="item">
+                <div class="icon">
+                  <img src="../img/user_dark.png">
+                </div>
+                <div class="info">
+                  <div class="title">Long long book name with a long title</div>
+                  <div class="price">$19.99</div>
+                  <div class="provider">
+                    <img src="../img/book_depository.png">
+                  </div>
+                </div>
+              </a>
+              <!-- Sample End -->
+            <!-- Item example -->
+            <a class="item">
+                <div class="icon">
+                  <img src="../img/user_dark.png">
+                </div>
+                <div class="info">
+                  <div class="title">Long long book name with a long title</div>
+                  <div class="price">$19.99</div>
+                  <div class="provider">
+                    <img src="../img/book_depository.png">
+                  </div>
+                </div>
+              </a>
+              <!-- Sample End -->
+            <!-- Item example -->
+            <a class="item">
+                <div class="icon">
+                  <img src="../img/user_dark.png">
+                </div>
+                <div class="info">
+                  <div class="title">Long long book name with a long title</div>
+                  <div class="price">$19.99</div>
+                  <div class="provider">
+                    <img src="../img/book_depository.png">
+                  </div>
+                </div>
+              </a>
+              <!-- Sample End -->
+          </div>
+        </div>
+
+        <!-- Clubs reading this book -->
+        <div class="prlg-panel">
+          <!--  -->
+          <div class="side-section--header">
+            <div class="header">Clubs reading this book</div>
+          </div>
+          <div class="club-list">
+            <!-- Club Sample -->
+            <a class="club">
+              <div class="icon">
+                <img src="../img/book_dark.png">
+              </div>
+              <div class="info">
+                <div class="display-name">Club's Extra Long Name</div>
+                <div class="handle">@theclubextralongname</div>
+              </div>
+            </a>
+            <!-- End sample -->
+            <!-- Club Sample -->
+            <a class="club">
+                <div class="icon">
+                  <img src="../img/book_clear.png">
+                </div>
+                <div class="info">
+                  <div class="display-name">Club's Extra Long Long Name</div>
+                  <div class="handle">@theclubextralonglongname</div>
+                </div>
+              </a>
+              <!-- End sample -->
+            <!-- Club Sample -->
+            <a class="club">
+                <div class="icon">
+                  <img src="../img/book_dark.png">
+                </div>
+                <div class="info">
+                  <div class="display-name">Club's Short Name</div>
+                  <div class="handle">@theclubname</div>
+                </div>
+              </a>
+              <!-- End sample -->
+          </div>
+        </div>
+
+        <!-- User reading/wishlisting -->
+        <div class="prlg-panel"></div>
+      </div>
     
     </div>
     
@@ -488,6 +630,10 @@
 
     
     $(document).ready(function() {
+
+      $('#toggle-catalogue').on('click', function() {
+        $('#bookstore-links').toggleClass('open');
+      });
 
       $('#action-prologe').on('click', function() {
         $("#prologe-modal").modal('show');
